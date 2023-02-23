@@ -4,7 +4,7 @@ dotenv.config({});
 const cli = require("cli-color");
 let db = {};
 
-const sequelize = new Sequelize("mta", "postgres", "1234", {
+const sequelize = new Sequelize("ansormta", "ansor", "1234", {
   host: "localhost",
   dialect: "postgres",
 });
@@ -22,5 +22,5 @@ db.sequelize = sequelize;
 db.Op = Op;
 
 db.user = require("./user")(sequelize, DataTypes);
- //db.sequelize.sync({ force: true, alter: true });
+db.sequelize.sync({ force: true, alter: true });
 module.exports = db;

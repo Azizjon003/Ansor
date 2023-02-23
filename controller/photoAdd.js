@@ -64,7 +64,7 @@ answerPhoto.on("photo", async (ctx) => {
   let obj = {};
   // obj.img = image.href;
   for (let i = 0; i < dataQ.length; i++) {
-    arrcha.push(`<li>${i+1}.${dataQ[i]}: ${arr[i]}</li>`);
+    arrcha.push(`\n${i + 1}.${dataQ[i]}: ${arr[i]}`);
   }
   // userArr.push(obj);
   const phone = arr[2];
@@ -73,7 +73,7 @@ answerPhoto.on("photo", async (ctx) => {
   const jobName = subJobData[job][user.subjob];
   const addres = arr[1];
 
-  const url = await replaceText(arrcha, image.href, id);
+  const url = await replaceText(arrcha, link, id);
 
   const txt = `Zayafka raqami № ${count}\nKim tomonidan yuborildi <a href="tg://user?id=${id}">${user.id}</a>\n Lavozim : #${jobName}\nBizdan Olmoqchi bo'lgan Maoshi : ${salary}\nTel : ${phone}\nManzil : ${addres}`;
   const dtd = fs.readFileSync(url);
