@@ -1,0 +1,14 @@
+    1. Ism,familiyangizni kiriting (Bunyodbek Ikromov):
+    2. Manzilingiz (Farg'ona viloyati, Marg'ilon shaxri, Yuksalish ko’chasi 25):
+    3. Telefon raqamingiz:
+    4. Yoshingizni kiriting:
+    5. Mutaxassisligingiz:
+    6. Ma'lumotingiz qanday:
+    7. Turmush qurganmisiz?
+    8. Nechta farzandingiz bor?
+    9. Qaysi korxona, yoki tashkilotlarda va qaysi lavozimlarda ishlagansiz?
+    10. Nima uchun ishdan ketdingiz?
+    11. Ohirgi oylarda oylik daromadingiz qancha edi?
+    12. Bizning korxonada eng kami qancha oylik maoshga ishlay olasiz?
+    13. Bizning korxonada qancha vaqt ishlay olasiz ?
+    14. Rasmingizni yuboring (Selfi ko’rinishida yoki 3x4):
