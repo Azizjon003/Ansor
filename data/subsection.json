@@ -1,11 +1,16 @@
 [
-  ["Bosh menejer", "Yurist", "HR menejer"],
-  ["Bosh xisobchi", "Xisobchi"],
-  ["SMM", "Marketolog"],
-  ["Elektrik", "Santexnik", "VRF sistemasi"],
-  ["Ichki Tozalik xodimi", "Tashqi Tozalik xodimi", "Stoyanka xodimi"],
-  ["Ichki tartib xodimi", "Tashqi qorovul"],
-  ["Bolalar maydonchasi nazoratchisi"],
-  ["Oshpaz", "Yordamchi"],
-  ["Sotuvchi"]
+  [
+    "Mebel",
+    "Supermarket",
+    "Restoran",
+    "Bolalar maydonchasi",
+    "Sovg'alar do'koni"
+  ],
+  [
+    "Qo'riqlash",
+    "Oshxona",
+    "Bolalar maydonchasi",
+    "Tozalik",
+    "Xo'jalik bo'limi"
+  ]
 ]

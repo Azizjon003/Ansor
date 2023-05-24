@@ -1,7 +1,7 @@
 const { newWizart } = require("../index.js");
 const { HOME_KEYBOARD, yesNo, category } = require("../utility/keyboard.js");
 
-newWizart.hears("Ansor savdo majmuasi bo'sh ish o'rinlari ⚡️", async (ctx) => {
+newWizart.hears("«Ansor» savdo markazidagi bo'sh ish o'rinlar", async (ctx) => {
   // const id = ctx.update.message.from.id;
   // const text =
   //   "Siz bilan yaqindan tanishish va dunyo qarashingizni bilishimiz uchun savollar berishimizga rozimisiz?";
@@ -11,7 +11,7 @@ newWizart.hears("Ansor savdo majmuasi bo'sh ish o'rinlari ⚡️", async (ctx) =
   //   reply_markup: yesNo,
   // });
   const id = ctx.update.message.from.id;
-  const text = "Kategoriyani tanlang ⬇️";
+  const text = "⬇️ Bo'limlardan birini tanlang!";
 
   ctx.telegram.sendMessage(id, text, {
     parse_mode: "HTML",

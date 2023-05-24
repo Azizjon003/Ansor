@@ -1,8 +1,7 @@
 const { confirm } = require("../index");
 const fs = require("fs");
 const path = require("path");
-const db = require("../model/index");
-const User = db.user;
+const User = require("../model/user");
 
 const datas = JSON.parse(
   fs.readFileSync(path.join(__dirname, "../data/question.json"), "utf-8")
@@ -17,10 +16,20 @@ const {
 confirm.hears("Orqaga", async (ctx) => {
   const id = ctx.update.message.from.id;
   const text = "Siz bosh menyudasiz";
-  await User.update(
-    { recent: null, job: null, questions: [], subjob: null },
-    { where: { telegramId: id } }
+  // await User.update(
+  //   { recent: null, job: null, questions: [], subjob: null },
+  //   { where: { telegramId: id } }
+  // );
+  await User.updateOne(
+    { telegramId: id },
+    {
+      recent: null,
+      job: null,
+      questions: [],
+      subjob: null,
+    }
   );
+
   ctx.telegram.sendMessage(id, text, {
     parse_mode: "HTML",
     reply_markup: HOME_KEYBOARD,
@@ -32,10 +41,19 @@ confirm.hears("Orqaga", async (ctx) => {
 confirm.hears("Ha", async (ctx) => {
   const id = ctx.update.message.from.id;
 
-  const user = await User.findOne({ where: { telegramId: id } });
+  const user = await User.findOne({ telegramId: id });
   const data = datas[user.job];
   let recent = 0;
-  await user.update({ recent: recent }, { where: { telegramId: id } });
+  
+  await user.updateOne(
+    {
+      telegramId: id,
+    },
+    {
+      recent: recent,
+    }
+  );
+
   ctx.telegram.sendMessage(id, data[recent], {
     parse_mode: "HTML",
     reply_markup: cancel,

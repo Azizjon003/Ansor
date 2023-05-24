@@ -1,12 +1,11 @@
 const { adminMessage } = require("..");
 
-const db = require("../model/index.js");
-const User = db.user;
+const User = require("../model/user");
 
 adminMessage.on("message", async (ctx) => {
   const id = ctx.update.message.from.id;
   const text = ctx.update.message.text.trim();
-  const users = await User.findAll();
+  const users = await User.find();
   console.log(users);
 
   for (let i = 0; i < users.length; i++) {
@@ -20,14 +19,12 @@ adminMessage.on("message", async (ctx) => {
     }
   }
 
-  await User.update(
+  await User.updateOne(
     {
-      command: "",
+      telegram_id: id,
     },
     {
-      where: {
-        telegram_id: id,
-      },
+      command: "",
     }
   );
 

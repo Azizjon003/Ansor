@@ -6,20 +6,23 @@ const {
   category,
   cancel,
 } = require("../utility/keyboard.js");
-const db = require("../model/index");
-const sequelize = db.sequelize;
-const User = db.user;
+const User = require("../model/user.js");
 const fs = require("fs");
 const path = require("path");
-
 
 answer.hears("Orqaga", async (ctx) => {
   const id = ctx.update.message.from.id;
   const text = "Siz bosh menyudasiz";
-  await User.update(
-    { recent: null, job: null, questions: [], subjob: null },
-    { where: { telegramId: id } }
+  await User.updateOne(
+    { telegramId: id },
+    {
+      recent: null,
+      job: null,
+      questions: [],
+      subjob: null,
+    }
   );
+
   ctx.telegram.sendMessage(id, text, {
     parse_mode: "HTML",
     reply_markup: HOME_KEYBOARD,
@@ -29,33 +32,46 @@ answer.hears("Orqaga", async (ctx) => {
 });
 
 answer.on("message", async (ctx) => {
-  
-const datas = JSON.parse(
-  fs.readFileSync(path.join(__dirname, "../data/question.json"), "utf-8")
-);
+  const datas = JSON.parse(
+    fs.readFileSync(path.join(__dirname, "../data/question.json"), "utf-8")
+  );
   const id = ctx.update.message.from.id;
   const text = ctx.update.message.text;
-  const user = await User.findOne({ where: { telegramId: id } });
+  const user = await User.findOne({ telegramId: id });
   console.log(user.questions);
   const data = datas[user.job];
   let recent = user.recent * 1;
+  console.log(recent, "ishlashini tekshir");
 
   recent = recent + 1;
 
-  User.update(
-    {
-      questions: sequelize.fn("array_append", sequelize.col("questions"), text),
-    },
-    { where: { telegramId: id } }
+  // User.update(
+  //   {
+  //     questions: sequelize.fn("array_append", sequelize.col("questions"), text),
+  //   },
+  //   { where: { telegramId: id } }
+  // );
+
+  await User.updateOne(
+    { telegramId: id },
+    { $push: { questions: { $each: [text] } } }
   );
-  await user.update({ recent: recent }, { where: { telegramId: id } });
+
+  // await user.update({ recent: recent }, { where: { telegramId: id } });
+  console.log(recent, "ishlashini tekshiruvda");
+  await User.updateOne(
+    { telegramId: id },
+    {
+      recent: recent,
+    }
+  );
   if (recent == data.length) {
     ctx.telegram.sendMessage(
       id,
-      "Rasmingizni yuboring (Selfi ko’rinishida yoki 3x4):",
+      "Ma'lumotlaringizni adminlarimizga jo'natishga rozimisiz",
       {
         parse_mode: "HTML",
-        reply_markup: cancel,
+        reply_markup: yesNo,
       }
     );
 
@@ -71,5 +87,7 @@ const datas = JSON.parse(
     // );
     return ctx.wizard.next();
   }
-  ctx.telegram.sendMessage(id, data[recent], {});
+  ctx.telegram.sendMessage(id, data[recent], {
+    parse_mode:"HTML"
+  });
 });

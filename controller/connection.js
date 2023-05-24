@@ -6,7 +6,7 @@ newWizart.hears("Biz bilan bog'lanish 📞", async (ctx) => {
   const text =
     "<b>📞Biz bilan bog'lanish</b>" +
     "\n <i>Quyidagi raqam orqali </i>" +
-    "\n Tel: <code>+998950457000</code>" +
+    "\n Tel: <code>+998950070051</code>" +
     "\n Telegram: <code>@HRmanager_23</code>";
   ctx.telegram.sendMessage(id, text, {
     parse_mode: "HTML",

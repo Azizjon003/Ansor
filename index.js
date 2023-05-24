@@ -2,6 +2,7 @@ const { Telegraf, Composer, session, Scenes } = require("telegraf");
 // const { Sequelize } = require("sequelize");
 
 const dotenv = require("dotenv");
+const connectDB = require("./model");
 
 dotenv.config({});
 
@@ -13,32 +14,32 @@ const bot = new Telegraf(TOKEN);
 const newWizart = new Composer();
 exports.newWizart = newWizart;
 require("./controller/connection.js");
-require("./controller/admin.js");
+require("./controller/admin.js"); // bajarildi
 require("./controller/aboutWe.js");
 require("./controller/working.js");
 const working = new Composer();
 exports.working = working;
-require("./controller/category.js");
+require("./controller/category.js"); // bajarildi
 
 const anketa = new Composer();
 exports.anketa = anketa;
 
-require("./controller/anketa.js");
+require("./controller/anketa.js"); // bajarildi
 
 const confirm = new Composer();
 exports.confirm = confirm;
-require("./controller/confirm.js");
+require("./controller/confirm.js"); // bajaraldi
 const answer = new Composer();
 exports.answer = answer;
-require("./controller/answer.js");
+require("./controller/answer.js"); // bajarildi
 
 const answerPhoto = new Composer();
 exports.answerPhoto = answerPhoto;
-require("./controller/photoAdd.js");
+require("./controller/photoAdd.js"); // bajarildi
 
 const adminMessage = new Composer();
 exports.adminMessage = adminMessage;
-require("./controller/message.js");
+require("./controller/message.js"); // bajarildi
 const menuSchema = new Scenes.WizardScene(
   "sceneWizard",
   newWizart,
@@ -73,5 +74,10 @@ bot.catch((error, ctx) => {
 
 exports.bot = bot;
 
-console.log("Bot is running");
-bot.launch();
+const start = async () => {
+  console.log("Bot is running");
+  await connectDB();
+  bot.launch();
+};
+
+start();

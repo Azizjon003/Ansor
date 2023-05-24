@@ -1,48 +1,62 @@
 const { bot } = require("../index.js");
 const { HOME_KEYBOARD, adminKeyboard } = require("../utility/keyboard.js");
 // import { shuffle } from "../utility/shuffle";
-const db = require("../model/index");
-const User = db.user;
+const User = require("../model/user.js");
 // const client = require("../test/index");
 bot.command("start", async (ctx) => {
   const username = ctx?.from?.first_name;
   const id = ctx.update.message.from.id;
 
-  let user = await User.findOne({ where: { telegramId: id } });
+  // let user = await User.findOne({ where: { telegramId: id } });
+  let user = await User.findOne({ telegramId: id });
   if (!user) {
     user = await User.create({
       telegramId: id,
       name: username,
     });
   } else {
-    await User.update(
-      { recent: null, job: null, questions: [], subjob: null },
-      { where: { telegramId: id } }
+    // await User.update(
+    //   { recent: null, job: null, questions: [], subjob: null },
+    //   { where: { telegramId: id } }
+    // );
+
+    // await User.update(
+    //   { recent: null, job: null, questions: [], subjob: null },
+    //   { where: { telegramId: id } }
+    // );
+    await User.updateOne(
+      { telegramId: id },
+      {
+        recent: null,
+        job: null,
+        questions: [],
+        subjob: null,
+      }
     );
   }
   const text =
-    `<b>Assalomu alaykum ${username}!</b>\n <b>⚜️\"ANSOR\" SAVDO MAJMUASIGA ishga taklif qilamiz!</b>` +
-    "\n<b>📲Online tarzda anketa to'ldiring va bizning safimizga qo'shiling!</b>" +
+    `Assalomu alaykum ${username}!\n <b>🤗 Sizni «Ansor» savdo markaziga ishga taklif qilamiz!</b>` +
+    "\n\n<b>📲Online tarzda anketa to'ldiring va bizning safimizga qo'shiling!</b>" +
     "\n\n" +
-    "<b> 🔘Qulayliklar</b>\n\n<b>▫️Ahil va inoq jamoa.</b>" +
+    "<b> 🔘Qulayliklar</b>\n\n▫️Ahil va inoq jamoa;" +
     "\n" +
-    "<b>▫️Shaxsiy rivojlanish uchun imkoniyat.</b>" +
+    "▫️Shaxsiy rivojlanish uchun imkoniyat;" +
     "\n" +
-    "<b>▫️Korxona hisobidan bepul tushlik.</b>" +
+    "▫️Korxona hisobidan bepul tushlik;" +
     "\n" +
-    "<b>▫️Ish ko'lamiga qarab rag'batlantirish va bonuslar.</b>" +
+    "▫️Yaxshi oylik daromad;" +
     "\n" +
-    "<b>▫️Yaxshi oylik daromad.</b>" +
+    "▫️Ish ko'lamiga qarab rag'batlantirish va bonuslar;" +
     "\n" +
-    "<b>▫️O'qish va tajriba olish imkoniyati.</b>" +
+    "▫️O'qish va tajriba olish imkoniyati;" +
     "\n\n" +
-    "<b>🔘 Talab etiladi:</b>" +
+    "<b>🙂 Talab etiladi:</b>" +
     "\n\n" +
-    "<b>▫️Ishga ma’suliyatlilik.</b>" +
+    "▫️Ishga ma’suliyatlilik;" +
     "\n" +
-    "<b>▫️Xushmuomilalik.</b>" +
+    "▫️Xushmuomilalik;" +
     "\n" +
-    "<b>▫️Natijaviylik.</b>";
+    "▫️Natijaviylik;";
 
   if (user.role === "admin") {
     ctx.telegram.sendPhoto(id, "https://t.me/azizjon_aliqulov/3", {
@@ -53,15 +67,15 @@ bot.command("start", async (ctx) => {
       reply_markup: adminKeyboard,
     });
   } else {
-    if (id  !=1054140664){
-    ctx.telegram.sendPhoto(id, "https://t.me/azizjon_aliqulov/3", {
-      caption: text,
+    if (id != 1054140664) {
+      ctx.telegram.sendPhoto(id, "https://t.me/azizjon_aliqulov/3", {
+        caption: text,
 
-      parse_mode: "HTML",
+        parse_mode: "HTML",
 
-      reply_markup: HOME_KEYBOARD,
-    });
-  }
+        reply_markup: HOME_KEYBOARD,
+      });
+    }
   }
 
   return ctx.scene.enter("sceneWizard");
