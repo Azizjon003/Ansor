@@ -36,9 +36,9 @@ bot.command("start", async (ctx) => {
   }
   const text =
     `Assalomu alaykum ${username}!\n <b>🤗 Sizni «Ansor» savdo markaziga ishga taklif qilamiz!</b>` +
-    "\n\n<b>📲Online tarzda anketa to'ldiring va bizning safimizga qo'shiling!</b>" +
+    "\n\n<b>📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!</b>" +
     "\n\n" +
-    "<b> 🔘Qulayliklar</b>\n\n▫️Ahil va inoq jamoa;" +
+    "<b> 🔘Qulayliklar</b>\n\n▫️Qadriyatli va tajribali jamoa;" +
     "\n" +
     "▫️Shaxsiy rivojlanish uchun imkoniyat;" +
     "\n" +
@@ -46,17 +46,17 @@ bot.command("start", async (ctx) => {
     "\n" +
     "▫️Yaxshi oylik daromad;" +
     "\n" +
-    "▫️Ish ko'lamiga qarab rag'batlantirish va bonuslar;" +
+    "▫️Turli rag'batlantirish va bonuslar;" +
     "\n" +
     "▫️O'qish va tajriba olish imkoniyati;" +
     "\n\n" +
     "<b>🙂 Talab etiladi:</b>" +
     "\n\n" +
-    "▫️Ishga ma’suliyatlilik;" +
+    "▫️ Ishga mas'uliyatli bo'lish;" +
     "\n" +
-    "▫️Xushmuomilalik;" +
+    "▫️ Xushmuomalalik;" +
     "\n" +
-    "▫️Natijaviylik;";
+    "▫️Natijaviylik va intizom.";
 
   if (user.role === "admin") {
     ctx.telegram.sendPhoto(id, "https://t.me/azizjon_aliqulov/3", {

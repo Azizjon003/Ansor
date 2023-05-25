@@ -55,7 +55,9 @@ answerPhoto.hears("Ha", async (ctx) => {
   let arrcha = [];
   // obj.img = image.href;
   for (let i = 0; i < dataQ.length; i++) {
-    arrcha.push(`\n${i + 1}.${dataQ[i].replace(/<\/?[^>]+(>|$)/g, "")}: ${arr[i]}`);
+    arrcha.push(
+      `\n${i + 1}.${dataQ[i].replace(/<\/?[^>]+(>|$)/g, "")}: ${arr[i]}`
+    );
   }
   // userArr.push(obj);
   const phone = arr[2];
@@ -88,7 +90,7 @@ answerPhoto.hears("Ha", async (ctx) => {
   );
   ctx.telegram.sendMessage(
     id,
-    "\nSizning anketangiz hodimlarimizga muvaffaqiyatli jo‘natildi.\nMutahassislarimiz tomonidan ko'rib chiqiladi va tanlov asosida suhbatga chaqiriladi.\nSiz bosh menyudasiz.",
+    "Bir oz kuting, yuborilmoqda…\nSizning anketangiz HR bo’limiga muvaffaqiyatli yuborildi.Mutaxassislarimiz tomonidan ko'rib chiqiladi va tanlov asosida suhbatga chaqiriladi.\nSiz bosh menyudasiz.",
     {
       reply_markup: HOME_KEYBOARD,
     }
