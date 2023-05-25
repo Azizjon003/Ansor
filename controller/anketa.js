@@ -54,17 +54,11 @@ anketa.on("message", async (ctx) => {
   const text = ctx.update.message.text;
   const user = await User.findOne({ telegramId: id });
   const data = datas[user.job];
-  console.log(user.job);
-  console.log(data);
-  console.log(text);
   const i = data.indexOf(text);
-  console.log(i);
   if (i == -1) {
     ctx.telegram.sendMessage(id, "Bunday bo'lim mavjud emas");
     return 0;
   }
-
-  // await user.update({ subjob: i }, { where: { telegramId: id } });
   await User.updateOne(
     {
       telegramId: id,

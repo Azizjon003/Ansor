@@ -14,12 +14,9 @@ const ishla = async (arr, id) => {
   const time = new Date().getTime();
   const pdf = path.join(__dirname, "../src", `${time}.pdf`);
   let pdfDoc = Printer.createPdfKitDocument(doc);
-  await pdfDoc.pipe(fs.createWriteStream(pdf));
-  await pdfDoc.end();
-  // const html = fs.readFileSync(
-  //   path.join(__dirname, "../pdf/home.html"),
-  //   "utf8"
-  // );
+  pdfDoc.pipe(fs.createWriteStream(pdf));
+  pdfDoc.end();
+
   await sleep(500);
 
   return pdf;
