@@ -100,7 +100,7 @@ answerPhoto.on("photo", async (ctx) => {
   );
   ctx.telegram.sendMessage(
     id,
-    "Bir oz kuting, yuborilmoqda…\nSizning anketangiz HR bo’limiga muvaffaqiyatli yuborildi.Mutaxassislarimiz tomonidan ko'rib chiqiladi va tanlov asosida suhbatga chaqiriladi.\nSiz bosh menyudasiz.",
+    "Sizning anketangiz HR bo’limiga muvaffaqiyatli yuborildi.\nMutaxassislarimiz tomonidan ko'rib chiqiladi va tanlov asosida suhbatga chaqiriladi.\nSiz bosh menyudasiz.",
     {
       reply_markup: HOME_KEYBOARD,
     }
