@@ -33,7 +33,7 @@ answerPhoto.hears("Orqaga", async (ctx) => {
 
   return ctx.wizard.selectStep(0);
 });
-answerPhoto.hears("Ha", async (ctx) => {
+answerPhoto.on("photo", async (ctx) => {
   const datas = JSON.parse(
     fs.readFileSync(path.join(__dirname, "../data/question.json"), "utf-8")
   );
@@ -41,11 +41,23 @@ answerPhoto.hears("Ha", async (ctx) => {
     fs.readFileSync(path.join(__dirname, "../data/subsection.json"))
   );
   const id = ctx.update.message.from.id;
+
+  const photo =
+    ctx.message?.photo[4]?.file_id ||
+    ctx.message?.photo[3]?.file_id ||
+    ctx.message?.photo[2]?.file_id;
   await ctx.telegram.sendMessage(id, "Bir oz kuting jo'natilmoqda.");
   let count = Number(fs.readFileSync(path.join(__dirname, "../count.txt")));
 
   // await ctx.telegram.sendPhoto(id, photo);
 
+  const time = new Date().getTime();
+  const image = await ctx.telegram.getFileLink(photo);
+  console.log(image);
+  const data = await axios.get(image.href, { responseType: "stream" });
+
+  let link = `${__dirname}/temp/${time}.jpg`;
+  await data.data.pipe(fs.createWriteStream(link));
   const user = await User.findOne({
     telegramId: id,
   });
@@ -55,9 +67,7 @@ answerPhoto.hears("Ha", async (ctx) => {
   let arrcha = [];
   // obj.img = image.href;
   for (let i = 0; i < dataQ.length; i++) {
-    arrcha.push(
-      `\n${i + 1}.${dataQ[i].replace(/<\/?[^>]+(>|$)/g, "")}: ${arr[i]}`
-    );
+    arrcha.push(`\n${i + 1}.${dataQ[i]}: ${arr[i]}`);
   }
   // userArr.push(obj);
   const phone = arr[2];
@@ -68,7 +78,7 @@ answerPhoto.hears("Ha", async (ctx) => {
 
   const full_name = arr[0];
 
-  const url = await replaceText(arrcha, id);
+  const url = await replaceText(arrcha, link, id);
 
   console.log(user);
   const txt = `Zayafka raqami № ${count}\nKim tomonidan yuborildi <a href="tg://user?id=${id}">${user.id}</a>\n Lavozim : #${jobName}\nBizdan Olmoqchi bo'lgan Maoshi : ${salary}\nTel : ${phone}\nManzil : ${addres} \n Ism(full_name) : ${full_name}`;

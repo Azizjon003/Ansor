@@ -6,10 +6,19 @@ const Printer = new pdfMake({
 });
 const fs = require("fs");
 const path = require("path");
-const ishla = async (arr, id) => {
+const ishla = async (arr, imgLink, id) => {
   let doc = {
-    content: [...arr],
-    fonstSize: 20,
+    content: [
+      {
+        image: imgLink,
+        width: 200,
+        height: 200,
+      },
+      ...arr,
+    ],
+    defaultStyle: {
+      fontSize: 8,
+    },
   };
   const time = new Date().getTime();
   const pdf = path.join(__dirname, "../src", `${time}.pdf`);
