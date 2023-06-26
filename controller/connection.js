@@ -5,13 +5,9 @@ newWizart.hears("Biz bilan bog'lanish 📞", async (ctx) => {
   const id = ctx.update.message.from.id;
   const text =
     "<b>📞Biz bilan bog'lanish</b>" +
-    "\n <i>Quyidagi raqam orqali </i>" +
-    "\n Tel: <code>+998950070051</code>" +
-    "\n Telegram: <code>@HRmanager_23</code>";
+    "\n 👨‍💻ADMIN BILAN BOG'LANISH: +998971167070";
   ctx.telegram.sendMessage(id, text, {
     parse_mode: "HTML",
     reply_markup: HOME_KEYBOARD,
   });
-  // return ctx.scene.;
-  // return ctx.scene.enter("sceneWizard");
 });

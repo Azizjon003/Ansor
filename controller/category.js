@@ -51,33 +51,11 @@ working.hears(datas, async (ctx) => {
 
   await User.updateOne({ telegramId: id }, { job: i });
 
-  const dataCategory = JSON.parse(fs.readFileSync(pathUrkCategory, "utf-8"));
-  
-  console.log(dataCategory);
-  let category = dataCategory[i];
-  let textcha = category.join(" | ")
-  
-  const txt = "Kerakli bo'limni tanlang" + `\n ${textcha} \n`;
-  let arr = [];
-
-  if (typeof category !== "undefined" && category.length > 0) {
-    for (let i = 0; i < category.length; i++) {
-      arr.push([{ text: category[i] }]);
-    }
-    arr.push([{ text: "Orqaga" }]);
-    ctx.telegram.sendMessage(id, txt, {
-      parse_mode: "HTML",
-      reply_markup: {
-        keyboard: arr,
-        resize_keyboard: true,
-        one_time_keyboard: true,
-      },
-    });
-    return ctx.wizard.next();
-  } else {
-    ctx.telegram.sendMessage(id, "Bo'limlar mavjud emas", {
-      parse_mode: "HTML",
-      reply_markup: HOME_KEYBOARD,
-    });
-  }
+  const txt =
+    "Siz bilan yaqinroq tanishishimiz uchun quyidagi savollarga javob berishingizni so'raymiz.\n Rozimisiz? 😉";
+  ctx.telegram.sendMessage(id, txt, {
+    parse_mode: "HTML",
+    reply_markup: yesNo,
+  });
+  return ctx.wizard.next();
 });

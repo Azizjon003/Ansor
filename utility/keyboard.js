@@ -3,13 +3,10 @@ const path = require("path");
 
 const HOME_KEYBOARD = {
   keyboard: [
-    [{ text: "«Ansor» savdo markazidagi bo'sh ish o'rinlar" }],
+    [{ text: "🧾 Anketa to'ldirish" }],
     [
       {
-        text: "Biz haqimizda 💠",
-      },
-      {
-        text: "Biz bilan bog'lanish 📞",
+        text: "Bo'g'lanish 📞",
       },
     ],
   ],

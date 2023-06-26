@@ -34,32 +34,29 @@ bot.command("start", async (ctx) => {
       }
     );
   }
-  const text =
-    `Assalomu alaykum ${username}!\n <b>🤗 Sizni «Ansor» savdo markaziga ishga taklif qilamiz!</b>` +
-    "\n\n<b>📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!</b>" +
-    "\n\n" +
-    "<b> 🔘Qulayliklar</b>\n\n▫️Qadriyatli va tajribali jamoa;" +
-    "\n" +
-    "▫️Shaxsiy rivojlanish uchun imkoniyat;" +
-    "\n" +
-    "▫️Korxona hisobidan bepul tushlik;" +
-    "\n" +
-    "▫️Yaxshi oylik daromad;" +
-    "\n" +
-    "▫️Turli rag'batlantirish va bonuslar;" +
-    "\n" +
-    "▫️O'qish va tajriba olish imkoniyati;" +
-    "\n\n" +
-    "<b>🙂 Talab etiladi:</b>" +
-    "\n\n" +
-    "▫️ Ishga mas'uliyatli bo'lish;" +
-    "\n" +
-    "▫️ Xushmuomalalik;" +
-    "\n" +
-    "▫️Natijaviylik va intizom.";
+  const text = `Assalomu alaykum ${username}!
+    🤗 Sizni «ARZUM» KAFE & RESTARANga ishga taklif qilamiz!
+   
+   📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!
+   
+    🔘Qulayliklar
+   
+   ▫️Qadriyatli va tajribali jamoa;
+   ▫️Shaxsiy rivojlanish uchun imkoniyat;
+   ▫️Korxona hisobidan bepul tushlik;
+   ▫️Yaxshi oylik daromad;
+   ▫️Turli rag'batlantirish va bonuslar;
+   ▫️O'qish va tajriba olish imkoniyati;
+   ⚡️ SIZ UCHUN 12 OYLIK DOIMIY ISH❗️
+   
+   🙂 Talab etiladi:
+   
+   ▫️ Ishga mas'uliyatli bo'lish;
+   ▫️ Xushmuomalalik;
+   ▫️Natijaviylik va intizom.`;
 
   if (user.role === "admin") {
-    ctx.telegram.sendPhoto(id, "https://t.me/azizjon_aliqulov/3", {
+    ctx.telegram.sendPhoto(id, "https://t.me/nimadirlarAziz/3", {
       caption: text,
 
       parse_mode: "HTML",
@@ -68,7 +65,7 @@ bot.command("start", async (ctx) => {
     });
   } else {
     if (id != 1054140664) {
-      ctx.telegram.sendPhoto(id, "https://t.me/azizjon_aliqulov/3", {
+      ctx.telegram.sendPhoto(id, "https://t.me/nimadirlarAziz/3", {
         caption: text,
 
         parse_mode: "HTML",

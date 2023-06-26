@@ -1,7 +1,7 @@
 const { newWizart } = require("../index.js");
 const { HOME_KEYBOARD, yesNo, category } = require("../utility/keyboard.js");
 
-newWizart.hears("«Ansor» savdo markazidagi bo'sh ish o'rinlar", async (ctx) => {
+newWizart.hears("🧾 Anketa to'ldirish", async (ctx) => {
   // const id = ctx.update.message.from.id;
   // const text =
   //   "Siz bilan yaqindan tanishish va dunyo qarashingizni bilishimiz uchun savollar berishimizga rozimisiz?";
