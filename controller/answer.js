@@ -45,19 +45,11 @@ answer.on("message", async (ctx) => {
 
   recent = recent + 1;
 
-  // User.update(
-  //   {
-  //     questions: sequelize.fn("array_append", sequelize.col("questions"), text),
-  //   },
-  //   { where: { telegramId: id } }
-  // );
-
   await User.updateOne(
     { telegramId: id },
     { $push: { questions: { $each: [text] } } }
   );
 
-  // await user.update({ recent: recent }, { where: { telegramId: id } });
   console.log(recent, "ishlashini tekshiruvda");
   await User.updateOne(
     { telegramId: id },
@@ -73,17 +65,6 @@ answer.on("message", async (ctx) => {
         parse_mode: "HTML",
       }
     );
-
-    // User.update(
-    //   {
-    //     questions: sequelize.fn(
-    //       "array_append",
-    //       sequelize.col("questions"),
-    //       text
-    //     ),
-    //   },
-    //   { where: { telegramId: id } }
-    // );
     return ctx.wizard.next();
   }
   ctx.telegram.sendMessage(id, data[recent], {

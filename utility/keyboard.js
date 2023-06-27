@@ -80,4 +80,32 @@ const adminKeyboard = {
   one_time_keyboard: true,
 };
 
+const addInlineKeyboard = (arr) => {
+  let left = [];
+  let right = [];
+
+  for (let i = 0; i < arr.length; i += 2) {
+    let arrcha = [];
+    arrcha.push({
+      text: arr[i],
+      callback_data: arr[i],
+    });
+
+    if (i + 1 < arr.length) {
+      arrcha.push({
+        text: arr[i + 1],
+        callback_data: arr[i + 1],
+      });
+    }
+    left.push(arrcha);
+  }
+
+  let data = [];
+  // data.push(left);
+  // data.push(right);
+
+  return left;
+};
+
+exports.addInlineKeyboard = addInlineKeyboard;
 exports.adminKeyboard = adminKeyboard;

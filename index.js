@@ -21,10 +21,10 @@ const working = new Composer();
 exports.working = working;
 require("./controller/category.js"); // bajarildi
 
-// const anketa = new Composer();
-// exports.anketa = anketa;
+const anketa = new Composer();
+exports.anketa = anketa;
 
-// require("./controller/anketa.js"); // bajarildi
+require("./controller/anketa.js"); // bajarildi
 
 const confirm = new Composer();
 exports.confirm = confirm;
@@ -44,6 +44,7 @@ const menuSchema = new Scenes.WizardScene(
   "sceneWizard",
   newWizart,
   working,
+  anketa,
   confirm,
   answer,
   answerPhoto,

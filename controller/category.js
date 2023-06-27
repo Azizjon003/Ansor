@@ -7,6 +7,7 @@ const {
   cancel,
   category,
   yesNo,
+  addInlineKeyboard,
 } = require("../utility/keyboard.js");
 
 const pathUrl = path.join(__dirname, "../data/section.json");
@@ -50,12 +51,15 @@ working.hears(datas, async (ctx) => {
   // await user.update({ job: i }, { where: { telegramId: id } });
 
   await User.updateOne({ telegramId: id }, { job: i });
+  let txt = "Qaysi lavozimda ishlamoqchisiz";
+  let data = JSON.parse(fs.readFileSync(pathUrkCategory, "utf-8"));
+  console.log(data);
+  let inlineKeyboard = addInlineKeyboard(data[0]);
 
-  const txt =
-    "Siz bilan yaqinroq tanishishimiz uchun quyidagi savollarga javob berishingizni so'raymiz.\n Rozimisiz? 😉";
-  ctx.telegram.sendMessage(id, txt, {
-    parse_mode: "HTML",
-    reply_markup: yesNo,
+  ctx.reply(txt, {
+    reply_markup: {
+      inline_keyboard: inlineKeyboard,
+    },
   });
   return ctx.wizard.next();
 });
