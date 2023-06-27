@@ -6,7 +6,7 @@ const HOME_KEYBOARD = {
     [{ text: "🧾 Anketa to'ldirish" }],
     [
       {
-        text: "Bo'g'lanish 📞",
+        text: "Bog'lanish 📞",
       },
     ],
   ],
