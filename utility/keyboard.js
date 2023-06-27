@@ -86,24 +86,40 @@ const addInlineKeyboard = (arr) => {
 
   for (let i = 0; i < arr.length; i += 2) {
     let arrcha = [];
-    arrcha.push({
-      text: arr[i],
-      callback_data: arr[i],
-    });
-
-    if (i + 1 < arr.length) {
+    let arrcha2 = [];
+    let arrcha3 = [];
+    if (arr[i].length > 25) {
+      arrcha2.push({
+        text: arr[i],
+        callback_data: arr[i],
+      });
+    } else {
       arrcha.push({
-        text: arr[i + 1],
-        callback_data: arr[i + 1],
+        text: arr[i],
+        callback_data: arr[i],
       });
     }
+
+    if (i + 1 < arr.length) {
+      if (arr[i + 1].length > 25) {
+        arrcha3.push({
+          text: arr[i + 1],
+          callback_data: arr[i + 1],
+        });
+      } else {
+        arrcha.push({
+          text: arr[i + 1],
+          callback_data: arr[i + 1],
+        });
+      }
+    }
+
     left.push(arrcha);
+    left.push(arrcha2);
+    left.push(arrcha3);
   }
 
   let data = [];
-  // data.push(left);
-  // data.push(right);
-
   return left;
 };
 
