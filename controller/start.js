@@ -35,7 +35,7 @@ bot.command("start", async (ctx) => {
     );
   }
   const text = `Assalomu alaykum ${username}!
-    🤗 Sizni «ARZUM» KAFE & RESTARANga ishga taklif qilamiz!
+    🤗 Sizni "MOBI CENTER"ga ishga taklif qilamiz!
    
    📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!
    
@@ -56,7 +56,7 @@ bot.command("start", async (ctx) => {
    ▫️Natijaviylik va intizom.`;
 
   if (user.role === "admin") {
-    ctx.telegram.sendPhoto(id, "https://t.me/nimadirlarAziz/3", {
+    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/2", {
       caption: text,
 
       parse_mode: "HTML",
@@ -65,7 +65,7 @@ bot.command("start", async (ctx) => {
     });
   } else {
     if (id != 1054140664) {
-      ctx.telegram.sendPhoto(id, "https://t.me/nimadirlarAziz/3", {
+      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/2", {
         caption: text,
 
         parse_mode: "HTML",

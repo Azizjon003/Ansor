@@ -53,13 +53,10 @@ exports.category = category;
 
 const adminKeyboard = {
   keyboard: [
-    [{ text: "«Ansor» savdo markazidagi bo'sh ish o'rinlar" }],
+    [{ text: "🧾 Anketa to'ldirish" }],
     [
       {
-        text: "Biz haqimizda 💠",
-      },
-      {
-        text: "Biz bilan bog'lanish 📞",
+        text: "Bog'lanish 📞",
       },
     ],
     [

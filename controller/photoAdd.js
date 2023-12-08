@@ -70,8 +70,8 @@ answerPhoto.on("photo", async (ctx) => {
     arrcha.push(`\n${i + 1}.${dataQ[i]}: ${arr[i]}`);
   }
   // userArr.push(obj);
-  const phone = arr[2];
-  const salary = arr[dataQ.length - 2];
+  const phone = arr[8];
+  const salary = arr[dataQ.length - 1];
   const job = user.job;
   const jobName = subJobData[job][user.subjob];
   const addres = arr[1];
@@ -84,7 +84,7 @@ answerPhoto.on("photo", async (ctx) => {
   const txt = `Zayafka raqami № ${count}\nKim tomonidan yuborildi <a href="tg://user?id=${id}">${user.id}</a>\n Lavozim : #${jobName}\nBizdan Olmoqchi bo'lgan Maoshi : ${salary}\nTel : ${phone}\nManzil : ${addres} \n Ism(full_name) : ${full_name}`;
   const dtd = fs.readFileSync(url);
   await ctx.telegram.sendDocument(
-    "-1001859749174",
+    "-1002050781774",
     {
       source: dtd,
       filename: `user.pdf`,
