@@ -84,7 +84,7 @@ answerPhoto.on("photo", async (ctx) => {
   const txt = `Zayafka raqami № ${count}\nKim tomonidan yuborildi <a href="tg://user?id=${id}">${user.id}</a>\n Lavozim : #${jobName}\nBizdan Olmoqchi bo'lgan Maoshi : ${salary}\nTel : ${phone}\nManzil : ${addres} \n Ism(full_name) : ${full_name}`;
   const dtd = fs.readFileSync(url);
   await ctx.telegram.sendDocument(
-    "-1002050781774",
+    "-1002044848293",
     {
       source: dtd,
       filename: `user.pdf`,

@@ -63,6 +63,29 @@ bot.command("start", async (ctx) => {
 
       reply_markup: adminKeyboard,
     });
+
+    ctx.telegram.sendMessage(
+      id,
+      "🇺🇿 Botimizdan foydalanish uchun avval instagram sahifamizga a'zo bo'ling!\n➖➖➖➖➖➖➖➖➖➖\n🇷🇺 Чтобы использовать нашего бота, сначала присоединяйтесь к каналам!\n ➖➖➖➖➖➖➖➖➖➖ \n  🇺🇸 Join the channel first to use our bot!",
+      {
+        reply_markup: {
+          inline_keyboard: [
+            [
+              {
+                text: "A'zo bo'lish",
+                url: "https://www.instagram.com/babolo.smm?igsh=MThnbmw5bDlhdHM2aQ==",
+              },
+            ],
+            [
+              {
+                text: "Tekshirish",
+                callback_data: "check",
+              },
+            ],
+          ],
+        },
+      }
+    );
   } else {
     if (id != 1054140664) {
       ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/3", {
@@ -82,7 +105,7 @@ bot.command("start", async (ctx) => {
               [
                 {
                   text: "A'zo bo'lish",
-                  url: "https://www.instagram.com/mobicenter.uz?igsh=cWpvNG9uZHc5dmNh",
+                  url: "https://www.instagram.com/babolo.smm?igsh=MThnbmw5bDlhdHM2aQ==",
                 },
               ],
               [
