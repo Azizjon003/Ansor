@@ -72,6 +72,29 @@ bot.command("start", async (ctx) => {
 
         reply_markup: HOME_KEYBOARD,
       });
+
+      ctx.telegram.sendMessage(
+        id,
+        "🇺🇿 Botimizdan foydalanish uchun avval instagram sahifamizga a'zo bo'ling!\n➖➖➖➖➖➖➖➖➖➖\n🇷🇺 Чтобы использовать нашего бота, сначала присоединяйтесь к каналам!\n ➖➖➖➖➖➖➖➖➖➖ \n  🇺🇸 Join the channel first to use our bot!",
+        {
+          reply_markup: {
+            inline_keyboard: [
+              [
+                {
+                  text: "A'zo bo'lish",
+                  url: "https://www.instagram.com/mobicenter.uz?igsh=cWpvNG9uZHc5dmNh",
+                },
+              ],
+              [
+                {
+                  text: "Tekshirish",
+                  callback_data: "check",
+                },
+              ],
+            ],
+          },
+        }
+      );
     }
   }
 
