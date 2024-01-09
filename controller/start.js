@@ -35,7 +35,7 @@ bot.command("start", async (ctx) => {
     );
   }
   const text = `Assalomu alaykum ${username}!
-    🤗 Sizni "MOBI CENTER"ga ishga taklif qilamiz!
+    🤗 Sizni "KREDIT MARKET HR BOT"ga ishga taklif qilamiz!
    
    📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!
    
@@ -56,7 +56,7 @@ bot.command("start", async (ctx) => {
    ▫️Natijaviylik va intizom.`;
 
   if (user.role === "admin") {
-    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/2", {
+    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/4", {
       caption: text,
 
       parse_mode: "HTML",
@@ -73,7 +73,7 @@ bot.command("start", async (ctx) => {
             [
               {
                 text: "A'zo bo'lish",
-                url: "https://www.instagram.com/mobicenter.uz?igsh=cWpvNG9uZHc5dmNh",
+                url: "https://www.instagram.com/kreditmarket.tj?igsh=NTFydHVtdGl1bjMy",
               },
             ],
             [
@@ -88,7 +88,7 @@ bot.command("start", async (ctx) => {
     );
   } else {
     if (id != 1054140664) {
-      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/2", {
+      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/4", {
         caption: text,
 
         parse_mode: "HTML",
@@ -105,7 +105,7 @@ bot.command("start", async (ctx) => {
               [
                 {
                   text: "A'zo bo'lish",
-                  url: "https://www.instagram.com/mobicenter.uz?igsh=cWpvNG9uZHc5dmNh",
+                  url: "https://www.instagram.com/kreditmarket.tj?igsh=NTFydHVtdGl1bjMy",
                 },
               ],
               [
