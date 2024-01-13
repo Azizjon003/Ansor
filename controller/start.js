@@ -1,13 +1,15 @@
 const { bot } = require("../index.js");
-const { HOME_KEYBOARD, adminKeyboard } = require("../utility/keyboard.js");
+const {
+  HOME_KEYBOARD,
+  adminKeyboard,
+  langKeyboard,
+} = require("../utility/keyboard.js");
 // import { shuffle } from "../utility/shuffle";
 const User = require("../model/user.js");
 // const client = require("../test/index");
 bot.command("start", async (ctx) => {
   const username = ctx?.from?.first_name;
   const id = ctx.update.message.from.id;
-
-  // let user = await User.findOne({ where: { telegramId: id } });
   let user = await User.findOne({ telegramId: id });
   if (!user) {
     user = await User.create({
@@ -15,15 +17,6 @@ bot.command("start", async (ctx) => {
       name: username,
     });
   } else {
-    // await User.update(
-    //   { recent: null, job: null, questions: [], subjob: null },
-    //   { where: { telegramId: id } }
-    // );
-
-    // await User.update(
-    //   { recent: null, job: null, questions: [], subjob: null },
-    //   { where: { telegramId: id } }
-    // );
     await User.updateOne(
       { telegramId: id },
       {
@@ -34,26 +27,21 @@ bot.command("start", async (ctx) => {
       }
     );
   }
-  const text = `Assalomu alaykum ${username}!
-    🤗 Sizni "KREDIT MARKET HR BOT"ga ishga taklif qilamiz!
-   
-   📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!
-   
-    🔘Qulayliklar
-   
-   ▫️Qadriyatli va tajribali jamoa;
-   ▫️Shaxsiy rivojlanish uchun imkoniyat;
-   ▫️Korxona hisobidan bepul tushlik;
-   ▫️Yaxshi oylik daromad;
-   ▫️Turli rag'batlantirish va bonuslar;
-   ▫️O'qish va tajriba olish imkoniyati;
-   ⚡️ SIZ UCHUN 12 OYLIK DOIMIY ISH❗️
-   
-   🙂 Talab etiladi:
-   
-   ▫️ Ishga mas'uliyatli bo'lish;
-   ▫️ Xushmuomalalik;
-   ▫️Natijaviylik va intizom.`;
+  const text = `Assalomu alaykum  ${username}!
+      🤗 Sizni "KREDIT MARKET HR BOT"ga ishga taklif qilamiz!
+     
+     📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!
+
+  —————————————————————-
+  Привет ${username}!
+       🤗Приглашаем Вас на работу в «KREDIT MARKET HR BOT»!
+     
+      📲Заполните онлайн-форму, пройдите собеседование и присоединяйтесь к нам!
+  —————————————————————
+  Салом ${username}!
+       🤗 Шуморо ба кор дар "KREDIT MARKET HR BOT" даъват мекунем!
+     
+      📲Анкетаи онлайнро пур кунед, аз мусоҳиба гузаред ва ба мо ҳамроҳ шавед!`;
 
   if (user.role === "admin") {
     ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/4", {
@@ -93,31 +81,31 @@ bot.command("start", async (ctx) => {
 
         parse_mode: "HTML",
 
-        reply_markup: HOME_KEYBOARD,
+        reply_markup: langKeyboard,
       });
 
-      ctx.telegram.sendMessage(
-        id,
-        "🇺🇿 Botimizdan foydalanish uchun avval instagram sahifamizga a'zo bo'ling!\n➖➖➖➖➖➖➖➖➖➖\n🇷🇺 Чтобы использовать нашего бота, сначала присоединяйтесь к каналам!\n ➖➖➖➖➖➖➖➖➖➖ \n  🇺🇸 Join the channel first to use our bot!",
-        {
-          reply_markup: {
-            inline_keyboard: [
-              [
-                {
-                  text: "A'zo bo'lish",
-                  url: "https://www.instagram.com/kreditmarket.tj?igsh=NTFydHVtdGl1bjMy",
-                },
-              ],
-              [
-                {
-                  text: "Tekshirish",
-                  callback_data: "check",
-                },
-              ],
-            ],
-          },
-        }
-      );
+      // ctx.telegram.sendMessage(
+      //   id,
+      //   "🇺🇿 Botimizdan foydalanish uchun avval instagram sahifamizga a'zo bo'ling!\n➖➖➖➖➖➖➖➖➖➖\n🇷🇺 Чтобы использовать нашего бота, сначала присоединяйтесь к каналам!\n ➖➖➖➖➖➖➖➖➖➖ \n  🇺🇸 Join the channel first to use our bot!",
+      //   {
+      //     reply_markup: {
+      //       inline_keyboard: [
+      //         [
+      //           {
+      //             text: "A'zo bo'lish",
+      //             url: "https://www.instagram.com/kreditmarket.tj?igsh=NTFydHVtdGl1bjMy",
+      //           },
+      //         ],
+      //         [
+      //           {
+      //             text: "Tekshirish",
+      //             callback_data: "check",
+      //           },
+      //         ],
+      //       ],
+      //     },
+      //   }
+      // );
     }
   }
 

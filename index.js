@@ -11,6 +11,9 @@ console.log(TOKEN);
 require("./model");
 const bot = new Telegraf(TOKEN);
 
+const LangWizard = new Composer();
+exports.LangWizard = LangWizard;
+require("./controller/language.js");
 const newWizart = new Composer();
 exports.newWizart = newWizart;
 require("./controller/connection.js");
@@ -42,6 +45,7 @@ exports.adminMessage = adminMessage;
 require("./controller/message.js"); // bajarildi
 const menuSchema = new Scenes.WizardScene(
   "sceneWizard",
+  LangWizard,
   newWizart,
   working,
   anketa,

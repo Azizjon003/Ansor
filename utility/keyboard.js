@@ -28,6 +28,18 @@ const yesNo = {
 };
 
 exports.yesNo = yesNo;
+
+const langKeyboard = {
+  keyboard: [
+    [{ text: "🇺🇿Uzbek" }],
+    [{ text: "🇹🇯Тоҷикӣ" }],
+    [{ text: "🇷🇺Русский" }],
+  ],
+  resize_keyboard: true,
+  one_time_keyboard: true,
+};
+
+exports.langKeyboard = langKeyboard;
 // Path: utility/keyboard.js
 // compare Category keyboard
 

@@ -79,6 +79,10 @@ const userSchema = new mongoose.Schema({
     type: Number,
     default: null,
   },
+  lang: {
+    type: String,
+    default: "uz",
+  },
 });
 
 const users = mongoose.model("User", userSchema);
