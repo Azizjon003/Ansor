@@ -65,4 +65,10 @@ const getUser = (data, lang) => {
     return `Заявка № ${data.count}\nКем отправлено <a href="tg://user?id=${data.telegram_id}">${data.id}</a>\n Должность : #${data.jobName}\nЖелаемая зарплата : ${data.salary}\nТел : ${data.phone}\nАдрес : ${data.addres} \n Имя(full_name) : ${data.full_name}`;
 };
 
+const getCancel = () => {
+  const data = ["Orqaga", "Назад", "Ба қафо"];
+  return data;
+};
+
+exports.getCancel = getCancel;
 exports.getUser = getUser;

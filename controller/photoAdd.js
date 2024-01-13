@@ -6,7 +6,12 @@ const fs = require("fs");
 const path = require("path");
 const replaceText = require("../utility/pdf");
 const User = require("../model/user");
-const { getItem, addLang, getUser } = require("../utility/addLang.js");
+const {
+  getItem,
+  addLang,
+  getUser,
+  getCancel,
+} = require("../utility/addLang.js");
 const jobData = JSON.parse(
   fs.readFileSync(path.join(__dirname, "../data/section.json"))
 );
@@ -16,13 +21,16 @@ function sleep(ms) {
   });
 }
 
-answerPhoto.hears("Orqaga", async (ctx) => {
+answerPhoto.hears(getCancel(), async (ctx) => {
   const id = ctx.update.message.from.id;
   const text = "Siz bosh menyudasiz";
   // await User.update(
   //   { recent: null, job: null, questions: [], subjob: null },
   //   { where: { telegramId: id } }
   // );
+  const user = await User.findOne({
+    telegramId: id,
+  });
   await User.updateOne(
     { telegramId: id },
     {
@@ -34,7 +42,7 @@ answerPhoto.hears("Orqaga", async (ctx) => {
   );
   ctx.telegram.sendMessage(id, text, {
     parse_mode: "HTML",
-    reply_markup: HOME_KEYBOARD,
+    reply_markup: addLang(user.lang, "home_keyboards"),
   });
 
   return ctx.wizard.selectStep(0);
@@ -140,9 +148,12 @@ answerPhoto.hears("Yo'q", async (ctx) => {
       subjob: null,
     }
   );
+  const user = await User.findOne({
+    telegramId: id,
+  });
   ctx.telegram.sendMessage(id, text, {
     parse_mode: "HTML",
-    reply_markup: HOME_KEYBOARD,
+    reply_markup: addLang(user.lang, "home_keyboards"),
   });
 
   return ctx.wizard.selectStep(0);

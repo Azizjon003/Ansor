@@ -9,20 +9,23 @@ const {
   yesNo,
   addInlineKeyboard,
 } = require("../utility/keyboard.js");
-const { getSections, getItem } = require("../utility/addLang.js");
+const { getSections, getItem, getCancel } = require("../utility/addLang.js");
 
 const pathUrl = path.join(__dirname, "../data/section.json");
 const datas = JSON.parse(fs.readFileSync(pathUrl, "utf-8"));
 
 const pathUrkCategory = path.join(__dirname, "../data/subsection.json");
 
-working.hears("Orqaga", async (ctx) => {
+working.hears(getCancel(), async (ctx) => {
   const id = ctx.update.message.from.id;
   const text = "Siz bosh menyudasiz";
   // await User.update(
   //   { recent: null, job: null, questions: [], subjob: null },
   //   { where: { telegramId: id } }
   // );
+  const user = await User.findOne({
+    telegramId: id,
+  });
   await User.updateOne(
     { telegramId: id },
     {
@@ -32,10 +35,9 @@ working.hears("Orqaga", async (ctx) => {
       subjob: null,
     }
   );
-
   ctx.telegram.sendMessage(id, text, {
     parse_mode: "HTML",
-    reply_markup: HOME_KEYBOARD,
+    reply_markup: addLang(user.lang, "home_keyboards"),
   });
 
   return ctx.wizard.selectStep(0);

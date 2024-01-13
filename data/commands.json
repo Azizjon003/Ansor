@@ -40,6 +40,11 @@
       "keyboard": [[{ "text": "Ha" }, { "text": "Yo'q" }]],
       "resize_keyboard": true,
       "one_time_keyboard": true
+    },
+    "cancel": {
+      "keyboard": [[{ "text": "Orqaga" }]],
+      "resize_keyboard": true,
+      "one_time_keyboard": true
     }
   },
   "ru": {
@@ -84,6 +89,11 @@
       "keyboard": [[{ "text": "Да" }, { "text": "Нет" }]],
       "resize_keyboard": true,
       "one_time_keyboard": true
+    },
+    "cancel": {
+      "keyboard": [[{ "text": "Назад" }]],
+      "resize_keyboard": true,
+      "one_time_keyboard": true
     }
   },
   "tjk": {
@@ -125,6 +135,11 @@
     },
     "yesNo": {
       "keyboard": [[{ "text": "Ҳа" }, { "text": "Не" }]],
+      "resize_keyboard": true,
+      "one_time_keyboard": true
+    },
+    "cancel": {
+      "keyboard": [[{ "text": "Ба қафо" }]],
       "resize_keyboard": true,
       "one_time_keyboard": true
     }

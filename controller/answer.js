@@ -9,11 +9,18 @@ const {
 const User = require("../model/user.js");
 const fs = require("fs");
 const path = require("path");
-const { getItem } = require("../utility/addLang.js");
+const { getItem, getCancel } = require("../utility/addLang.js");
 
-answer.hears("Orqaga", async (ctx) => {
+answer.hears(getCancel(), async (ctx) => {
   const id = ctx.update.message.from.id;
   const text = "Siz bosh menyudasiz";
+  // await User.update(
+  //   { recent: null, job: null, questions: [], subjob: null },
+  //   { where: { telegramId: id } }
+  // );
+  const user = await User.findOne({
+    telegramId: id,
+  });
   await User.updateOne(
     { telegramId: id },
     {
@@ -23,10 +30,9 @@ answer.hears("Orqaga", async (ctx) => {
       subjob: null,
     }
   );
-
   ctx.telegram.sendMessage(id, text, {
     parse_mode: "HTML",
-    reply_markup: HOME_KEYBOARD,
+    reply_markup: addLang(user.lang, "home_keyboards"),
   });
 
   return ctx.wizard.selectStep(0);

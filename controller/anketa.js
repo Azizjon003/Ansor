@@ -5,11 +5,17 @@ const fs = require("fs");
 const path = require("path");
 // const User = db.user;
 const User = require("../model/user");
-const { getItem, addLang } = require("../utility/addLang.js");
-
-anketa.hears("Orqaga", async (ctx) => {
+const { getItem, addLang, getCancel } = require("../utility/addLang.js");
+anketa.hears(getCancel(), async (ctx) => {
   const id = ctx.update.message.from.id;
   const text = "Siz bosh menyudasiz";
+  // await User.update(
+  //   { recent: null, job: null, questions: [], subjob: null },
+  //   { where: { telegramId: id } }
+  // );
+  const user = await User.findOne({
+    telegramId: id,
+  });
   await User.updateOne(
     { telegramId: id },
     {
@@ -19,10 +25,9 @@ anketa.hears("Orqaga", async (ctx) => {
       subjob: null,
     }
   );
-
   ctx.telegram.sendMessage(id, text, {
     parse_mode: "HTML",
-    reply_markup: HOME_KEYBOARD,
+    reply_markup: addLang(user.lang, "home_keyboards"),
   });
 
   return ctx.wizard.selectStep(0);
