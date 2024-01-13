@@ -5,6 +5,7 @@ const fs = require("fs");
 const path = require("path");
 // const User = db.user;
 const User = require("../model/user");
+const { getItem, addLang } = require("../utility/addLang.js");
 
 anketa.hears("Orqaga", async (ctx) => {
   const id = ctx.update.message.from.id;
@@ -52,11 +53,11 @@ anketa.on("callback_query", async (ctx) => {
   );
   const id = ctx.update.callback_query.from.id;
   let idcha = ctx.update.update_id;
-  console.log(ctx.update.callback_query.message);
+
   const text = ctx.update.callback_query.data;
   const user = await User.findOne({ telegramId: id });
   console.log(user);
-  const data = datas[user.job];
+  const data = datas[user.lang][user.job];
 
   const i = data.indexOf(text);
   if (i == -1) {
@@ -72,13 +73,12 @@ anketa.on("callback_query", async (ctx) => {
       subjob: i,
     }
   );
-  const txt =
-    "Siz bilan yaqinroq tanishishimiz uchun quyidagi savollarga javob berishingizni so'raymiz.\n Rozimisiz? 😉";
+  const txt = getItem(user.lang, "confirm");
   let messageId = ctx.update.callback_query.message.message_id;
   ctx.deleteMessage(messageId);
   ctx.telegram.sendMessage(id, txt, {
     parse_mode: "HTML",
-    reply_markup: yesNo,
+    reply_markup: addLang(user.lang, "yesNo"),
   });
   // ctx.editMessageText(txt, {
   //   reply_markup: yesNo,

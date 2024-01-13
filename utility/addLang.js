@@ -43,3 +43,24 @@ const getSections = () => {
 };
 
 exports.getSections = getSections;
+
+const getYes = () => {
+  const data = ["Ha", "Да", "Ҳа"];
+  return data;
+};
+exports.getYes = getYes;
+
+const getNo = () => {
+  const data = ["Yo'q", "Нет", "Не"];
+  return data;
+};
+exports.getNo = getNo;
+
+const getUser = (data, lang) => {
+  if (lang == "uz")
+    return `Zayafka raqami № ${data.count}\nKim tomonidan yuborildi <a href="tg://user?id=${data.telegram_id}">${data.id}</a>\n Lavozim : #${data.jobName}\nBizdan Olmoqchi bo'lgan Maoshi : ${data.salary}\nTel : ${data.phone}\nManzil : ${data.addres} \n Ism(full_name) : ${data.full_name}`;
+  if (lang == "ru")
+    return `Заявка № ${data.count}\nКем отправлено <a href="tg://user?id=${data.telegram_id}">${data.id}</a>\n Должность : #${data.jobName}\nЖелаемая зарплата : ${data.salary}\nТел : ${data.phone}\nАдрес : ${data.addres} \n Имя(full_name) : ${data.full_name}`;
+  if (lang == "tjk")
+    return `Заявка № ${data.count}\nКем отправлено <a href="tg://user?id=${data.telegram_id}">${data.id}</a>\n Должность : #${data.jobName}\nЖелаемая зарплата : ${data.salary}\nТел : ${data.phone}\nАдрес : ${data.addres} \n Имя(full_name) : ${data.full_name}`;
+};

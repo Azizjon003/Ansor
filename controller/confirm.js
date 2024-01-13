@@ -12,6 +12,7 @@ const {
   category,
   cancel,
 } = require("../utility/keyboard");
+const { getYes, getNo, getItem, addLang } = require("../utility/addLang.js");
 
 confirm.hears("Orqaga", async (ctx) => {
   const id = ctx.update.message.from.id;
@@ -38,13 +39,13 @@ confirm.hears("Orqaga", async (ctx) => {
   return ctx.wizard.selectStep(0);
 });
 
-confirm.hears("Ha", async (ctx) => {
+confirm.hears(getYes(), async (ctx) => {
   const id = ctx.update.message.from.id;
 
   const user = await User.findOne({ telegramId: id });
-  const data = datas[user.job];
+  const data = datas[user.lang][user.job];
   let recent = 0;
-  
+
   await user.updateOne(
     {
       telegramId: id,
@@ -61,13 +62,14 @@ confirm.hears("Ha", async (ctx) => {
   return ctx.wizard.next();
 });
 
-confirm.hears("Yo'q", async (ctx) => {
+confirm.hears(getNo(), async (ctx) => {
   const id = ctx.update.message.from.id;
-  const text = "Siz bosh sahifaga qaytadingiz ⬇️";
+  const user = await User.findOne({ telegramId: id });
+  const text = getItem(user.lang, "home");
 
   ctx.telegram.sendMessage(id, text, {
     parse_mode: "HTML",
-    reply_markup: HOME_KEYBOARD,
+    reply_markup: addLang(user.lang, "home_keyboards"),
   });
   return ctx.wizard.selectStep(0);
 });

@@ -6,6 +6,7 @@ const fs = require("fs");
 const path = require("path");
 const replaceText = require("../utility/pdf");
 const User = require("../model/user");
+const { getItem, addLang } = require("../utility/addLang.js");
 const jobData = JSON.parse(
   fs.readFileSync(path.join(__dirname, "../data/section.json"))
 );
@@ -46,7 +47,7 @@ answerPhoto.on("photo", async (ctx) => {
     ctx.message?.photo[4]?.file_id ||
     ctx.message?.photo[3]?.file_id ||
     ctx.message?.photo[2]?.file_id;
-  await ctx.telegram.sendMessage(id, "Bir oz kuting jo'natilmoqda.");
+  await ctx.telegram.sendMessage(id, getItem(user.lang, "loading"));
   let count = Number(fs.readFileSync(path.join(__dirname, "../count.txt")));
 
   // await ctx.telegram.sendPhoto(id, photo);
@@ -62,7 +63,7 @@ answerPhoto.on("photo", async (ctx) => {
     telegramId: id,
   });
 
-  const dataQ = datas[user.job];
+  const dataQ = datas[user.lang][user.job];
   let arr = user.questions;
   let arrcha = [];
   // obj.img = image.href;
@@ -98,15 +99,11 @@ answerPhoto.on("photo", async (ctx) => {
     { telegramId: id },
     { recent: null, job: null, questions: [], subjob: null }
   );
-  ctx.telegram.sendMessage(
-    id,
-    "Sizning anketangiz HR bo’limiga muvaffaqiyatli yuborildi.\nMutaxassislarimiz tomonidan ko'rib chiqiladi va tanlov asosida suhbatga chaqiriladi.\nSiz bosh menyudasiz.",
-    {
-      reply_markup: HOME_KEYBOARD,
-    }
-  );
+  ctx.telegram.sendMessage(id, getItem(user.lang, "sendUser"), {
+    reply_markup: addLang(user.lang, "home_keyboards"),
+  });
   fs.writeFileSync(path.join(__dirname, "../count.txt"), `${count + 1}`);
-  return ctx.wizard.selectStep(0);
+  return ctx.wizard.selectStep(1);
 });
 
 answerPhoto.hears("Yo'q", async (ctx) => {

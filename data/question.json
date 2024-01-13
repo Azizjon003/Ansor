@@ -1,27 +1,77 @@
-[
-  [
-    "Ism, familiya, sharifingizni kiriting!(Misol uchun: Begzod Farhodov Ikromovich (o'g'li))",
-    "Tavallud topgan sanangizni kiriting!(Misol uchun: 01.01.1998 / kun.oy.yil)",
-    "Millatingizni kiriting!\n(Misol uchun: O'zbek)",
-    "Hayotingizdagi ustuvor qadriyat qanday?",
-    "Oilaviy ahvolingiz qanday? (turmush qurgan, qurmagan)",
-    "Ishga kirishingizga kim qaror qabul qiladi?",
-    "Qiziqishlaringiz qanday? (Xobbiy)",
-    "Manzilingizni kiriting!\n(Misol uchun: Toshkent shahar, Shayxontohur tumani, Qoratosh mahallasi, 11-uy)",
-    "Telefon raqamingizni kiriting!\n(Misol uchun: +998911234567)",
-    "Bizning korxona haqida qayerdan ma'lumot oldingiz?: ",
-    "Qaysi korxona yoki tashkilotlarda ishlagansiz? Yo'nalishingizning nomini kiriting!",
-    "Nima sababdan ishdan ketgansiz?",
-    "Sizga qaysi ish vaqti qulay?",
-    "Oxirgi ish joyingizda oylik maoshingiz qancha edi?",
-    "Bizning korxonada qancha muddat ishlamoqchisiz?",
-    "Tanqidlarga qanday qaraysiz?",
-    "Ishga borib kelishda qiyinchilik bo'lmaydimi? (O'zim bora olaman, Transport zarur, Qolib ishlamoqchiman)",
-    "Ma'lumotingiz qanaqa? Yoki o'qish joyi!",
-    "Berilgan topshiriq va vazifalarga qay darajada yondashasiz?",
-    "Kompyuterda qaysi dasturlarni bilasiz va necha foiz?",
-    "Qaysi Chet tillarda so'zlasha olasiz?",
-    "O'zingiz haqingizda nimalar qo'shmoqchisiz?",
-    "Bizda qancha maosh olmoqchisiz (yozishingiz shart)?"
+{
+  "uz": [
+    [
+      "Ism, familiya, sharifingizni kiriting!(Misol uchun: Begzod Farhodov Ikromovich (o'g'li))",
+      "Tavallud topgan sanangizni kiriting!(Misol uchun: 01.01.1998 / kun.oy.yil)",
+      "Millatingizni kiriting!\n(Misol uchun: O'zbek)",
+      "Hayotingizdagi ustuvor qadriyat qanday?",
+      "Oilaviy ahvolingiz qanday? (turmush qurgan, qurmagan)",
+      "Ishga kirishingizga kim qaror qabul qiladi?",
+      "Qiziqishlaringiz qanday? (Xobbiy)",
+      "Manzilingizni kiriting!\n(Misol uchun: Toshkent shahar, Shayxontohur tumani, Qoratosh mahallasi, 11-uy)",
+      "Telefon raqamingizni kiriting!\n(Misol uchun: +998911234567)",
+      "Bizning korxona haqida qayerdan ma'lumot oldingiz?: ",
+      "Qaysi korxona yoki tashkilotlarda ishlagansiz? Yo'nalishingizning nomini kiriting!",
+      "Nima sababdan ishdan ketgansiz?",
+      "Sizga qaysi ish vaqti qulay?",
+      "Oxirgi ish joyingizda oylik maoshingiz qancha edi?",
+      "Bizning korxonada qancha muddat ishlamoqchisiz?",
+      "Tanqidlarga qanday qaraysiz?",
+      "Ishga borib kelishda qiyinchilik bo'lmaydimi? (O'zim bora olaman, Transport zarur, Qolib ishlamoqchiman)",
+      "Ma'lumotingiz qanaqa? Yoki o'qish joyi!",
+      "Berilgan topshiriq va vazifalarga qay darajada yondashasiz?",
+      "Kompyuterda qaysi dasturlarni bilasiz va necha foiz?",
+      "Qaysi Chet tillarda so'zlasha olasiz?",
+      "O'zingiz haqingizda nimalar qo'shmoqchisiz?",
+      "Bizda qancha maosh olmoqchisiz (yozishingiz shart)?"
+    ]
+  ],
+  "ru": [
+    [
+      "Напишите Ф.И.О. (Например: Иванов Иван Иванович)",
+      "Введите дату рождения (день, месяц, год рождения)",
+      "Введите номер телефона (+992 .. … .. ..)",
+      "Введите адрес проживания (город, район, улица № улицы)",
+      "Введите национальность",
+      "Какие ценности вы предпочитаете в жизни?  (например: честность, выносливость …..)",
+      "Какое у Вас семейное положение? (семейный/нет семьи)",
+      "Кто принимает решение, когда Вы устраиваетесь на работу?",
+      "Ваши увлечения (хобби)",
+      "Ваше образование или место учёбы?",
+      "На каких языках вы можете говорить?",
+      "Где Вы узнали о нашей Вакансии?",
+      "Где вы работали раньше?",
+      "Почему ушли с работы?",
+      "Какой график работы Вас устраивает?",
+      "Какая заработная плата была на последнем месте работы?",
+      "Сколько времени вы собираетесь работать в нашей компании?",
+      "Как вы относитесь к критике?",
+      "Какую заработную плату вы хотели бы получить в нашей компании? (обязательно напишите)",
+      "Что ещё вы можете добавить о себе?"
+    ]
+  ],
+  "tjk": [
+    [
+      "Ном ва насаби худро нависед (Мисол: Иванов Иван Иванович)",
+      "Санаи таваллуди худро дароред (руз, мох, соли таваллуд)",
+      "Раками телефони худро дароред (+992 .. … .. .. )",
+      "Сурогаи худро дароред (шахр, нохияи, чамоат, куча, № хона)",
+      "Милалти худро нависед",
+      "Кадом кадриятхо дар хаёти Шумо афзалиятнок аст?  (Мисол: бовари, ростгуи ….)",
+      "Шароити оилавии Шумо (оиладор/мучаррад)",
+      "Вакте, ки шумо ба кор медароед ки карор кабул мекунад?",
+      "Машгулиятхои дустдоштаи Шумо (хобби)",
+      "Маълумоти Шумо ё чои хониш?",
+      "Бо кадом забонхо гап зада метавонед?",
+      "Дар бораи чои холи (вакансия) аз кучо маълумот гирифтед ?",
+      "Дар кадом корхонаву ташкилотхо кор кардед?",
+      "Бо кадом сабаб Шумо аз кор рафтед?",
+      "Кадом вакти кори ба Шумо кулай аст?",
+      "Маоиши Шумо дар чои кори охирин чанд буд?",
+      "Ба кадом муддат дар корхонаи мок ор кардан ният доред?",
+      "Муносибат шумо ба танкидхо?",
+      "Аз вазифаи мазкур чанд кадар маош гирифтан мехохед? (албатта нависед)",
+      "Дар бораи худ боз кадом маълумотхоро илова мекунед?"
+    ]
   ]
-]
+}

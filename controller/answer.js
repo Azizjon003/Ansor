@@ -9,6 +9,7 @@ const {
 const User = require("../model/user.js");
 const fs = require("fs");
 const path = require("path");
+const { getItem } = require("../utility/addLang.js");
 
 answer.hears("Orqaga", async (ctx) => {
   const id = ctx.update.message.from.id;
@@ -38,8 +39,7 @@ answer.on("message", async (ctx) => {
   const id = ctx.update.message.from.id;
   const text = ctx.update.message.text;
   const user = await User.findOne({ telegramId: id });
-  console.log(user.questions);
-  const data = datas[user.job];
+  const data = datas[user.lang][user.job];
   let recent = user.recent * 1;
   console.log(recent, "ishlashini tekshir");
 
@@ -58,13 +58,9 @@ answer.on("message", async (ctx) => {
     }
   );
   if (recent == data.length) {
-    ctx.telegram.sendMessage(
-      id,
-      "Rasmingizni yuboring (Selfi ko’rinishida yoki 3x4):",
-      {
-        parse_mode: "HTML",
-      }
-    );
+    ctx.telegram.sendMessage(id, getItem(user.lang, "sendPhoto"), {
+      parse_mode: "HTML",
+    });
     return ctx.wizard.next();
   }
   ctx.telegram.sendMessage(id, data[recent], {
