@@ -6,7 +6,7 @@ const fs = require("fs");
 const path = require("path");
 const replaceText = require("../utility/pdf");
 const User = require("../model/user");
-const { getItem, addLang } = require("../utility/addLang.js");
+const { getItem, addLang, getUser } = require("../utility/addLang.js");
 const jobData = JSON.parse(
   fs.readFileSync(path.join(__dirname, "../data/section.json"))
 );
@@ -42,7 +42,9 @@ answerPhoto.on("photo", async (ctx) => {
     fs.readFileSync(path.join(__dirname, "../data/subsection.json"))
   );
   const id = ctx.update.message.from.id;
-
+  const user = await User.findOne({
+    telegramId: id,
+  });
   const photo =
     ctx.message?.photo[4]?.file_id ||
     ctx.message?.photo[3]?.file_id ||
@@ -59,9 +61,6 @@ answerPhoto.on("photo", async (ctx) => {
 
   let link = `${__dirname}/temp/${time}.jpg`;
   await data.data.pipe(fs.createWriteStream(link));
-  const user = await User.findOne({
-    telegramId: id,
-  });
 
   const dataQ = datas[user.lang][user.job];
   let arr = user.questions;
@@ -71,10 +70,10 @@ answerPhoto.on("photo", async (ctx) => {
     arrcha.push(`\n${i + 1}.${dataQ[i]}: ${arr[i]}`);
   }
   // userArr.push(obj);
-  const phone = arr[8];
+  const phone = arr[2];
   const salary = arr[dataQ.length - 1];
   const job = user.job;
-  const jobName = subJobData[job][user.subjob];
+  const jobName = subJobData[user.lang][job][user.subjob];
   const addres = arr[1];
 
   const full_name = arr[0];
@@ -82,7 +81,19 @@ answerPhoto.on("photo", async (ctx) => {
   const url = await replaceText(arrcha, link, id);
 
   console.log(user);
-  const txt = `Zayafka raqami № ${count}\nKim tomonidan yuborildi <a href="tg://user?id=${id}">${user.id}</a>\n Lavozim : #${jobName}\nBizdan Olmoqchi bo'lgan Maoshi : ${salary}\nTel : ${phone}\nManzil : ${addres} \n Ism(full_name) : ${full_name}`;
+  const txt = getUser(
+    {
+      count,
+      telegram_id: id,
+      id: user.id,
+      jobName,
+      salary,
+      phone,
+      addres,
+      full_name,
+    },
+    user.lang
+  );
   const dtd = fs.readFileSync(url);
   await ctx.telegram.sendDocument(
     "-1001803192983",

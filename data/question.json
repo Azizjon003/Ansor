@@ -2,14 +2,16 @@
   "uz": [
     [
       "Ism, familiya, sharifingizni kiriting!(Misol uchun: Begzod Farhodov Ikromovich (o'g'li))",
+      "Manzilingizni kiriting!\n(Misol uchun: Toshkent shahar, Shayxontohur tumani, Qoratosh mahallasi, 11-uy)",
+      "Telefon raqamingizni kiriting!\n(Misol uchun: +998911234567)",
+
       "Tavallud topgan sanangizni kiriting!(Misol uchun: 01.01.1998 / kun.oy.yil)",
       "Millatingizni kiriting!\n(Misol uchun: O'zbek)",
       "Hayotingizdagi ustuvor qadriyat qanday?",
       "Oilaviy ahvolingiz qanday? (turmush qurgan, qurmagan)",
       "Ishga kirishingizga kim qaror qabul qiladi?",
       "Qiziqishlaringiz qanday? (Xobbiy)",
-      "Manzilingizni kiriting!\n(Misol uchun: Toshkent shahar, Shayxontohur tumani, Qoratosh mahallasi, 11-uy)",
-      "Telefon raqamingizni kiriting!\n(Misol uchun: +998911234567)",
+
       "Bizning korxona haqida qayerdan ma'lumot oldingiz?: ",
       "Qaysi korxona yoki tashkilotlarda ishlagansiz? Yo'nalishingizning nomini kiriting!",
       "Nima sababdan ishdan ketgansiz?",
@@ -29,9 +31,9 @@
   "ru": [
     [
       "Напишите Ф.И.О. (Например: Иванов Иван Иванович)",
-      "Введите дату рождения (день, месяц, год рождения)",
-      "Введите номер телефона (+992 .. … .. ..)",
       "Введите адрес проживания (город, район, улица № улицы)",
+      "Введите номер телефона (+992 .. … .. ..)",
+      "Введите дату рождения (день, месяц, год рождения)",
       "Введите национальность",
       "Какие ценности вы предпочитаете в жизни?  (например: честность, выносливость …..)",
       "Какое у Вас семейное положение? (семейный/нет семьи)",
@@ -53,9 +55,9 @@
   "tjk": [
     [
       "Ном ва насаби худро нависед (Мисол: Иванов Иван Иванович)",
+      "Сурогаи худро дароред (шахр, нохияи, чамоат, куча, № хона)",
       "Санаи таваллуди худро дароред (руз, мох, соли таваллуд)",
       "Раками телефони худро дароред (+992 .. … .. .. )",
-      "Сурогаи худро дароред (шахр, нохияи, чамоат, куча, № хона)",
       "Милалти худро нависед",
       "Кадом кадриятхо дар хаёти Шумо афзалиятнок аст?  (Мисол: бовари, ростгуи ….)",
       "Шароити оилавии Шумо (оиладор/мучаррад)",

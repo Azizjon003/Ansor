@@ -64,3 +64,5 @@ const getUser = (data, lang) => {
   if (lang == "tjk")
     return `Заявка № ${data.count}\nКем отправлено <a href="tg://user?id=${data.telegram_id}">${data.id}</a>\n Должность : #${data.jobName}\nЖелаемая зарплата : ${data.salary}\nТел : ${data.phone}\nАдрес : ${data.addres} \n Имя(full_name) : ${data.full_name}`;
 };
+
+exports.getUser = getUser;
