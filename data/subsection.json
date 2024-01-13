@@ -1,11 +1,35 @@
-[
-  [
-    "Sotuvchi",
-    "Operator",
-    "Bosh xisobchi",
-    "Sotuv bo'limi raxbari",
-    "HR bo'limi raxbari",
-    "Menejer",
-    "Tozalovchi"
+{
+  "uz": [
+    [
+      "Sotuvchi",
+      "Operator",
+      "Bosh xisobchi",
+      "Sotuv bo'limi raxbari",
+      "HR bo'limi raxbari",
+      "Menejer",
+      "Tozalovchi"
+    ]
+  ],
+  "ru": [
+    [
+      "Продавец",
+      "Оператор",
+      "Главный бухгалтер",
+      "Руководитель отдела продаж",
+      "Руководитель отдела кадров",
+      "Менеджер",
+      "Уборщик"
+    ]
+  ],
+  "tjk": [
+    [
+      "Фурӯшгар",
+      "Оператор",
+      "Бош хисобчи",
+      "Фурӯш бўлими рахбари",
+      "HR бўлими рахбари",
+      "Менежер",
+      "Тозаловчи"
+    ]
   ]
-]
+}

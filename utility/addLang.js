@@ -32,3 +32,14 @@ const getCommands = (lang) => {
 };
 
 exports.getCommands = getCommands;
+
+const getSections = () => {
+  const datas = JSON.parse(
+    fs.readFileSync(path.join(__dirname, "../data/section.json"), "utf-8")
+  );
+  let arr = [datas.uz.shift(), datas.ru.shift(), datas.tjk.shift()];
+  console.log(arr);
+  return arr;
+};
+
+exports.getSections = getSections;

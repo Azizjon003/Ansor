@@ -9,6 +9,7 @@ const {
   yesNo,
   addInlineKeyboard,
 } = require("../utility/keyboard.js");
+const { getSections, getItem } = require("../utility/addLang.js");
 
 const pathUrl = path.join(__dirname, "../data/section.json");
 const datas = JSON.parse(fs.readFileSync(pathUrl, "utf-8"));
@@ -40,21 +41,21 @@ working.hears("Orqaga", async (ctx) => {
   return ctx.wizard.selectStep(0);
 });
 
-working.hears(datas, async (ctx) => {
+working.hears(getSections(), async (ctx) => {
   const id = ctx.update.message.from.id;
   const text = ctx.update.message.text;
 
-  const i = datas.indexOf(text);
-  console.log(i);
   const user = await User.findOne({ telegramId: id });
+  const i = datas[user.lang].indexOf(text);
+  console.log(i);
 
   // await user.update({ job: i }, { where: { telegramId: id } });
 
   await User.updateOne({ telegramId: id }, { job: i });
-  let txt = "Qaysi lavozimda ishlamoqchisiz";
+  let txt = getItem(user.lang, "lavozim");
   let data = JSON.parse(fs.readFileSync(pathUrkCategory, "utf-8"));
   console.log(data);
-  let inlineKeyboard = addInlineKeyboard(data[0]);
+  let inlineKeyboard = addInlineKeyboard(data[user.lang][0]);
 
   ctx.reply(txt, {
     reply_markup: {

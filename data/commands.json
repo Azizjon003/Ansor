@@ -17,6 +17,9 @@
     },
     "anketa": {
       "text": "Bo'limlardan birini tanlang"
+    },
+    "lavozim": {
+      "text": "Qaysi lavozimda ishlamoqchisiz?"
     }
   },
   "ru": {
@@ -37,6 +40,9 @@
     },
     "anketa": {
       "text": "Выберите один из разделов"
+    },
+    "lavozim": {
+      "text": "На какой должности вы хотите работать?"
     }
   },
   "tjk": {
@@ -57,6 +63,9 @@
     },
     "anketa": {
       "text": "Ба як аз баҳсҳо интихоб кунед"
+    },
+    "lavozim": {
+      "text": "Шумо дар кадом лавозим мехоҳед кор кард?"
     }
   },
   "commands": {
