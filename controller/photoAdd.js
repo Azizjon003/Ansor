@@ -10,6 +10,11 @@ const { getItem, addLang, getUser } = require("../utility/addLang.js");
 const jobData = JSON.parse(
   fs.readFileSync(path.join(__dirname, "../data/section.json"))
 );
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
 
 answerPhoto.hears("Orqaga", async (ctx) => {
   const id = ctx.update.message.from.id;
@@ -57,11 +62,13 @@ answerPhoto.on("photo", async (ctx) => {
   const time = new Date().getTime();
   const image = await ctx.telegram.getFileLink(photo);
   console.log(image);
-  const data = await axios.get(image.href, { responseType: "stream" });
 
+  const data = await axios.get(image.href, { responseType: "stream" });
   let link = `${__dirname}/temp/${time}.jpg`;
+
   await data.data.pipe(fs.createWriteStream(link));
 
+  await sleep(1000);
   const dataQ = datas[user.lang][user.job];
   let arr = user.questions;
   let arrcha = [];
