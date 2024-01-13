@@ -55,13 +55,23 @@ for (let i = 0; i < datas.length; i++) {
 
 //arr.push([{ text: "Orqaga" }]);
 
-const category = {
-  keyboard: arr,
-  resize_keyboard: true,
-  one_time_keyboard: true,
-};
+exports.category = (lang) => {
+  const pathUrl = path.join(__dirname, "../data/section.json");
 
-exports.category = category;
+  const datas = JSON.parse(fs.readFileSync(pathUrl, "utf-8"))[lang];
+  let arr = [];
+  for (let i = 0; i < datas.length; i++) {
+    if ((i + 1) % 2 == 0 && i != 0) {
+      arr.push([{ text: datas[i] }, { text: datas[i - 1] }]);
+    }
+  }
+  const categoryArr = {
+    keyboard: arr,
+    resize_keyboard: true,
+    one_time_keyboard: true,
+  };
+  return categoryArr;
+};
 
 const adminKeyboard = {
   keyboard: [

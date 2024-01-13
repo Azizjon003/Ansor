@@ -22,7 +22,7 @@ require("./controller/aboutWe.js");
 require("./controller/working.js");
 const working = new Composer();
 exports.working = working;
-require("./controller/category.js"); // bajarildi
+// require("./controller/category.js"); // bajarildi
 
 const anketa = new Composer();
 exports.anketa = anketa;

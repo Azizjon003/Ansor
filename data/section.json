@@ -1,1 +1,5 @@
-["Bo'sh ish o'rinlari" , "Orqaga"]
+{
+  "uz": ["Bo'sh ish o'rinlari", "Orqaga"],
+  "ru": ["Свободные места", "Назад"],
+  "tjk": ["Бош иш оринлари", "Оркаш"]
+}

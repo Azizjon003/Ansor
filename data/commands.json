@@ -1,32 +1,70 @@
 {
   "uz": {
-    "Home_keyboards": [
-      [{ "text": "🧾 Anketa to'ldirish" }],
-      [
-        {
-          "text": "Bog'lanish 📞"
-        }
-      ]
-    ]
+    "home_keyboards": {
+      "keyboard": [
+        [{ "text": "🧾 Anketa to'ldirish" }],
+        [
+          {
+            "text": "Bog'lanish 📞"
+          }
+        ]
+      ],
+      "resize_keyboard": true,
+      "one_time_keyboard": true
+    },
+    "contact": {
+      "text": "<b>📞Biz bilan bog'lanish</b>\n👨‍💻ADMIN BILAN BOG'LANISH: +998336432323"
+    },
+    "anketa": {
+      "text": "Bo'limlardan birini tanlang"
+    }
   },
   "ru": {
-    "Home_keyboards": [
-      [{ "text": "🧾 Заполнить анкету" }],
-      [
-        {
-          "text": "Связаться 📞"
-        }
-      ]
-    ]
+    "home_keyboards": {
+      "keyboard": [
+        [{ "text": "🧾 Заполнить анкету" }],
+        [
+          {
+            "text": "Контакты 📞"
+          }
+        ]
+      ],
+      "resize_keyboard": true,
+      "one_time_keyboard": true
+    },
+    "contact": {
+      "text": "<b>📞Связаться с нами</b>\n👨‍💻СВЯЗАТЬСЯ С АДМИНИСТРАТОРОМ: +998336432323"
+    },
+    "anketa": {
+      "text": "Выберите один из разделов"
+    }
   },
   "tjk": {
-    "Home_keyboards": [
-      [{ "text": "🧾 Анкетаи пур кардан" }],
-      [
-        {
-          "text": "Алоқа 📞"
-        }
-      ]
+    "home_keyboards": {
+      "keyboard": [
+        [{ "text": "🧾 Анкетаи пур кардан" }],
+        [
+          {
+            "text": "Алоқа 📞"
+          }
+        ]
+      ],
+      "resize_keyboard": true,
+      "one_time_keyboard": true
+    },
+    "contact": {
+      "text": "<b>📞Бо мо тамос кунед</b>\n👨‍💻БО МОДИРИ АЗМУД: +998336432323"
+    },
+    "anketa": {
+      "text": "Ба як аз баҳсҳо интихоб кунед"
+    }
+  },
+  "commands": {
+    "contact": ["Bog'lanish 📞", "Контакты 📞", "Алоқа 📞"],
+    "add": [
+      "🧾 Anketa to'ldirish",
+      "🧾 Заполнить анкету",
+      "🧾 Анкетаи пур кардан"
     ]
   }
 }
