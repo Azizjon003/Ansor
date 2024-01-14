@@ -111,7 +111,7 @@ answerPhoto.on("photo", async (ctx) => {
   );
   const dtd = fs.readFileSync(url);
   await ctx.telegram.sendDocument(
-    "-1001803192983",
+    "-1002044848293",
     {
       source: dtd,
       filename: `user.pdf`,
