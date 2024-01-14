@@ -9,7 +9,12 @@ const {
   yesNo,
   addInlineKeyboard,
 } = require("../utility/keyboard.js");
-const { getSections, getItem, getCancel } = require("../utility/addLang.js");
+const {
+  getSections,
+  getItem,
+  getCancel,
+  addLang,
+} = require("../utility/addLang.js");
 
 const pathUrl = path.join(__dirname, "../data/section.json");
 const datas = JSON.parse(fs.readFileSync(pathUrl, "utf-8"));
@@ -40,7 +45,7 @@ working.hears(getCancel(), async (ctx) => {
     reply_markup: addLang(user.lang, "home_keyboards"),
   });
 
-  return ctx.wizard.selectStep(0);
+  return ctx.wizard.selectStep(1);
 });
 
 working.hears(getSections(), async (ctx) => {

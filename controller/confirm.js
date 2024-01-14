@@ -44,7 +44,7 @@ confirm.hears(getCancel(), async (ctx) => {
     reply_markup: addLang(user.lang, "home_keyboards"),
   });
 
-  return ctx.wizard.selectStep(0);
+  return ctx.wizard.selectStep(1);
 });
 confirm.hears(getYes(), async (ctx) => {
   const id = ctx.update.message.from.id;
@@ -78,5 +78,5 @@ confirm.hears(getNo(), async (ctx) => {
     parse_mode: "HTML",
     reply_markup: addLang(user.lang, "home_keyboards"),
   });
-  return ctx.wizard.selectStep(0);
+  return ctx.wizard.selectStep(1);
 });

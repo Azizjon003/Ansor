@@ -45,7 +45,7 @@ answerPhoto.hears(getCancel(), async (ctx) => {
     reply_markup: addLang(user.lang, "home_keyboards"),
   });
 
-  return ctx.wizard.selectStep(0);
+  return ctx.wizard.selectStep(1);
 });
 answerPhoto.on("photo", async (ctx) => {
   const datas = JSON.parse(

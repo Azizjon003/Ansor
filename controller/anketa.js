@@ -30,7 +30,7 @@ anketa.hears(getCancel(), async (ctx) => {
     reply_markup: addLang(user.lang, "home_keyboards"),
   });
 
-  return ctx.wizard.selectStep(0);
+  return ctx.wizard.selectStep(1);
 });
 anketa.hears("/start", async (ctx) => {
   const id = ctx.update.message.from.id;

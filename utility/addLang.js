@@ -66,7 +66,7 @@ const getUser = (data, lang) => {
 };
 
 const getCancel = () => {
-  const data = ["Orqaga", "Назад", "Ба қафо"];
+  const data = ["Orqaga", "Назад", "Оркаш"];
   return data;
 };
 

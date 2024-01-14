@@ -9,7 +9,7 @@ const {
 const User = require("../model/user.js");
 const fs = require("fs");
 const path = require("path");
-const { getItem, getCancel } = require("../utility/addLang.js");
+const { getItem, getCancel, addLang } = require("../utility/addLang.js");
 
 answer.hears(getCancel(), async (ctx) => {
   const id = ctx.update.message.from.id;
@@ -35,7 +35,7 @@ answer.hears(getCancel(), async (ctx) => {
     reply_markup: addLang(user.lang, "home_keyboards"),
   });
 
-  return ctx.wizard.selectStep(0);
+  return ctx.wizard.selectStep(1);
 });
 
 answer.on("message", async (ctx) => {
