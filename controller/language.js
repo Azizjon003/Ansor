@@ -18,7 +18,7 @@ LangWizard.hears("🇺🇿Uzbek", async (ctx) => {
           [
             {
               text: "A'zo bo'lish",
-              url: "https://www.instagram.com/kreditmarket.tj?igsh=NTFydHVtdGl1bjMy",
+              url: "https://www.instagram.com/babolo_education?igsh=eDk3dHMxdTg2dzlx",
             },
           ],
           [
@@ -49,7 +49,7 @@ LangWizard.hears("🇷🇺Русский", async (ctx) => {
           [
             {
               text: "A'zo bo'lish",
-              url: "https://www.instagram.com/kreditmarket.tj?igsh=NTFydHVtdGl1bjMy",
+              url: "https://www.instagram.com/babolo_education?igsh=eDk3dHMxdTg2dzlx",
             },
           ],
           [
@@ -81,7 +81,7 @@ LangWizard.hears("🇹🇯Тоҷикӣ", async (ctx) => {
           [
             {
               text: "A'zo bo'lish",
-              url: "https://www.instagram.com/kreditmarket.tj?igsh=NTFydHVtdGl1bjMy",
+              url: "https://www.instagram.com/babolo_education?igsh=eDk3dHMxdTg2dzlx",
             },
           ],
           [

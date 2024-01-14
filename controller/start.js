@@ -28,23 +28,23 @@ bot.command("start", async (ctx) => {
     );
   }
   const text = `Assalomu alaykum  ${username}!
-      🤗 Sizni "BABOLO TAXI HR BOT"ga ishga taklif qilamiz!
+      🤗 Sizni "BABOLO EDUCATION HR BOT"ga ishga taklif qilamiz!
      
      📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!
 
   —————————————————————-
   Привет ${username}!
-       🤗Приглашаем Вас на работу в «BABOLO TAXI HR BOT»!
+       🤗Приглашаем Вас на работу в «BABOLO  EDUCATION HR BOT»!
      
       📲Заполните онлайн-форму, пройдите собеседование и присоединяйтесь к нам!
   —————————————————————
   Салом ${username}!
-       🤗 Шуморо ба кор дар "BABOLO TAXI HR BOT" даъват мекунем!
+       🤗 Шуморо ба кор дар "BABOLO EDUCATION HR BOT" даъват мекунем!
      
       📲Анкетаи онлайнро пур кунед, аз мусоҳиба гузаред ва ба мо ҳамроҳ шавед!`;
 
   if (user.role === "admin") {
-    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/4", {
+    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/5", {
       caption: text,
 
       parse_mode: "HTML",
@@ -61,7 +61,7 @@ bot.command("start", async (ctx) => {
             [
               {
                 text: "A'zo bo'lish",
-                url: "https://www.instagram.com/kreditmarket.tj?igsh=NTFydHVtdGl1bjMy",
+                url: "https://www.instagram.com/babolo_education?igsh=eDk3dHMxdTg2dzlx",
               },
             ],
             [
@@ -76,7 +76,7 @@ bot.command("start", async (ctx) => {
     );
   } else {
     if (id != 1054140664) {
-      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/4", {
+      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/5", {
         caption: text,
 
         parse_mode: "HTML",
