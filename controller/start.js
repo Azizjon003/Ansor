@@ -28,18 +28,18 @@ bot.command("start", async (ctx) => {
     );
   }
   const text = `Assalomu alaykum  ${username}!
-      🤗 Sizni "KREDIT MARKET HR BOT"ga ishga taklif qilamiz!
+      🤗 Sizni "BABOLO TAXI HR BOT"ga ishga taklif qilamiz!
      
      📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!
 
   —————————————————————-
   Привет ${username}!
-       🤗Приглашаем Вас на работу в «KREDIT MARKET HR BOT»!
+       🤗Приглашаем Вас на работу в «BABOLO TAXI HR BOT»!
      
       📲Заполните онлайн-форму, пройдите собеседование и присоединяйтесь к нам!
   —————————————————————
   Салом ${username}!
-       🤗 Шуморо ба кор дар "KREDIT MARKET HR BOT" даъват мекунем!
+       🤗 Шуморо ба кор дар "BABOLO TAXI HR BOT" даъват мекунем!
      
       📲Анкетаи онлайнро пур кунед, аз мусоҳиба гузаред ва ба мо ҳамроҳ шавед!`;
 
