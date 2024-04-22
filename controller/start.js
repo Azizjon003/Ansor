@@ -44,7 +44,7 @@ bot.command("start", async (ctx) => {
       📲Анкетаи онлайнро пур кунед, аз мусоҳиба гузаред ва ба мо ҳамроҳ шавед!`;
 
   if (user.role === "admin") {
-    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/4", {
+    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/3", {
       caption: text,
 
       parse_mode: "HTML",
@@ -76,7 +76,7 @@ bot.command("start", async (ctx) => {
     );
   } else {
     if (id != 1054140664) {
-      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/4", {
+      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/3", {
         caption: text,
 
         parse_mode: "HTML",
