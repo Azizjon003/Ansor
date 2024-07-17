@@ -35,7 +35,7 @@ bot.command("start", async (ctx) => {
     );
   }
   const text = `Assalomu alaykum ${username}!
-    🤗 Sizni "MOBI CENTER"ga ishga taklif qilamiz!
+    🤗 Sizni "Sara Trades"ga ishga taklif qilamiz!
    
    📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!
    
@@ -56,7 +56,7 @@ bot.command("start", async (ctx) => {
    ▫️Natijaviylik va intizom.`;
 
   if (user.role === "admin") {
-    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/2", {
+    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/6", {
       caption: text,
 
       parse_mode: "HTML",
@@ -64,31 +64,31 @@ bot.command("start", async (ctx) => {
       reply_markup: adminKeyboard,
     });
 
-    ctx.telegram.sendMessage(
-      id,
-      "🇺🇿 Botimizdan foydalanish uchun avval instagram sahifamizga a'zo bo'ling!\n➖➖➖➖➖➖➖➖➖➖\n🇷🇺 Чтобы использовать нашего бота, сначала присоединяйтесь к каналам!\n ➖➖➖➖➖➖➖➖➖➖ \n  🇺🇸 Join the channel first to use our bot!",
-      {
-        reply_markup: {
-          inline_keyboard: [
-            [
-              {
-                text: "A'zo bo'lish",
-                url: "https://www.instagram.com/mobicenter.uz?igsh=cWpvNG9uZHc5dmNh",
-              },
-            ],
-            [
-              {
-                text: "Tekshirish",
-                callback_data: "check",
-              },
-            ],
-          ],
-        },
-      }
-    );
+    // ctx.telegram.sendMessage(
+    //   id,
+    //   "🇺🇿 Botimizdan foydalanish uchun avval instagram sahifamizga a'zo bo'ling!\n➖➖➖➖➖➖➖➖➖➖\n🇷🇺 Чтобы использовать нашего бота, сначала присоединяйтесь к каналам!\n ➖➖➖➖➖➖➖➖➖➖ \n  🇺🇸 Join the channel first to use our bot!",
+    //   {
+    //     reply_markup: {
+    //       inline_keyboard: [
+    //         [
+    //           {
+    //             text: "A'zo bo'lish",
+    //             url: "https://www.instagram.com/mobicenter.uz?igsh=cWpvNG9uZHc5dmNh",
+    //           },
+    //         ],
+    //         [
+    //           {
+    //             text: "Tekshirish",
+    //             callback_data: "check",
+    //           },
+    //         ],
+    //       ],
+    //     },
+    //   }
+    // );
   } else {
     if (id != 1054140664) {
-      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/2", {
+      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/6", {
         caption: text,
 
         parse_mode: "HTML",
@@ -96,28 +96,28 @@ bot.command("start", async (ctx) => {
         reply_markup: HOME_KEYBOARD,
       });
 
-      ctx.telegram.sendMessage(
-        id,
-        "🇺🇿 Botimizdan foydalanish uchun avval instagram sahifamizga a'zo bo'ling!\n➖➖➖➖➖➖➖➖➖➖\n🇷🇺 Чтобы использовать нашего бота, сначала присоединяйтесь к каналам!\n ➖➖➖➖➖➖➖➖➖➖ \n  🇺🇸 Join the channel first to use our bot!",
-        {
-          reply_markup: {
-            inline_keyboard: [
-              [
-                {
-                  text: "A'zo bo'lish",
-                  url: "https://www.instagram.com/mobicenter.uz?igsh=cWpvNG9uZHc5dmNh",
-                },
-              ],
-              [
-                {
-                  text: "Tekshirish",
-                  callback_data: "check",
-                },
-              ],
-            ],
-          },
-        }
-      );
+      // ctx.telegram.sendMessage(
+      //   id,
+      //   "🇺🇿 Botimizdan foydalanish uchun avval instagram sahifamizga a'zo bo'ling!\n➖➖➖➖➖➖➖➖➖➖\n🇷🇺 Чтобы использовать нашего бота, сначала присоединяйтесь к каналам!\n ➖➖➖➖➖➖➖➖➖➖ \n  🇺🇸 Join the channel first to use our bot!",
+      //   {
+      //     reply_markup: {
+      //       inline_keyboard: [
+      //         [
+      //           {
+      //             text: "A'zo bo'lish",
+      //             url: "https://www.instagram.com/mobicenter.uz?igsh=cWpvNG9uZHc5dmNh",
+      //           },
+      //         ],
+      //         [
+      //           {
+      //             text: "Tekshirish",
+      //             callback_data: "check",
+      //           },
+      //         ],
+      //       ],
+      //     },
+      //   }
+      // );
     }
   }
 
