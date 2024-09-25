@@ -34,29 +34,30 @@ bot.command("start", async (ctx) => {
       }
     );
   }
+
+  // ${username}
   const text = `Assalomu alaykum ${username}!
-    🤗 Sizni "Sara Trades"ga ishga taklif qilamiz!
-   
-   📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!
-   
-    🔘Qulayliklar
-   
-   ▫️Qadriyatli va tajribali jamoa;
-   ▫️Shaxsiy rivojlanish uchun imkoniyat;
-   ▫️Korxona hisobidan bepul tushlik;
-   ▫️Yaxshi oylik daromad;
-   ▫️Turli rag'batlantirish va bonuslar;
-   ▫️O'qish va tajriba olish imkoniyati;
-   ⚡️ SIZ UCHUN 12 OYLIK DOIMIY ISH❗️
-   
-   🙂 Talab etiladi:
-   
-   ▫️ Ishga mas'uliyatli bo'lish;
-   ▫️ Xushmuomalalik;
-   ▫️Natijaviylik va intizom.`;
+    🤗 Sizni "QUVONCH NASIYA"ga ishga taklif qilamiz!
+   
+   📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!
+   
+    🔘Qulayliklar
+   
+   ▫️Qadriyatli va tajribali jamoa;
+   ▫️Shaxsiy rivojlanish uchun imkoniyat;
+   ▫️Yaxshi oylik daromad;
+   ▫️Turli rag'batlantirish va bonuslar;
+   ▫️O'qish va tajriba olish imkoniyati;
+   ⚡️ SIZ UCHUN 12 OYLIK DOIMIY ISH❗️
+   
+   🙂 Talab etiladi:
+   
+   ▫️ Ishga mas'uliyatli bo'lish;
+   ▫️ Xushmuomalalik;
+   ▫️Natijaviylik va intizom.`;
 
   if (user.role === "admin") {
-    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/6", {
+    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/8", {
       caption: text,
 
       parse_mode: "HTML",
@@ -88,7 +89,7 @@ bot.command("start", async (ctx) => {
     // );
   } else {
     if (id != 1054140664) {
-      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/6", {
+      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/8", {
         caption: text,
 
         parse_mode: "HTML",
