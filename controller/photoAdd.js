@@ -74,7 +74,7 @@ answerPhoto.on("photo", async (ctx) => {
   const salary = arr[dataQ.length - 1];
   const job = user.job;
   const jobName = subJobData[job][user.subjob];
-  const addres = arr[1];
+  const addres = arr[7];
 
   const full_name = arr[0];
 
