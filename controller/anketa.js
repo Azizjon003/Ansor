@@ -72,8 +72,7 @@ anketa.on("callback_query", async (ctx) => {
       subjob: i,
     }
   );
-  const txt =
-    "Siz bilan yaqinroq tanishishimiz uchun quyidagi savollarga javob berishingizni so'raymiz.\n Rozimisiz? 😉";
+  const txt = `"Men roziman" tugmachasini bosish orqali siz o'zingizning shaxsiy ma'lumotlaringizni kompaniya maqsadlarida qayta ishlash uchun ularni saqlashga, foydalanishga va o'zaro almashishga rozilik bildirasiz. Shuningdek, ushbu anketada siz taqdim etgan barcha ma'lumotlar ishonchli ekanligi va yolg'on ma'lumot uzatilishi holatlari aniqlangan taqdirda barcha javobgarlikni o'z zimmangizga olasiz.`;
   let messageId = ctx.update.callback_query.message.message_id;
   ctx.deleteMessage(messageId);
   ctx.telegram.sendMessage(id, txt, {
