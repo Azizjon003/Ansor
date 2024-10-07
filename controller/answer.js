@@ -67,7 +67,22 @@ answer.on("message", async (ctx) => {
     );
     return ctx.wizard.next();
   }
-  ctx.telegram.sendMessage(id, data[recent], {
+
+  let keyboard = ["Orqaga", ...data[recent].slice(1)].map((el) => [
+    { text: el },
+  ]);
+
+  console.log(data[recent]);
+
+  ctx.telegram.sendMessage(id, data[recent][0], {
     parse_mode: "HTML",
+    reply_markup: {
+      keyboard: keyboard,
+      resize_keyboard: true,
+      one_time_keyboard: true,
+    },
   });
+  // ctx.telegram.sendMessage(id, data[recent], {
+  //   parse_mode: "HTML",
+  // });
 });

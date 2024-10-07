@@ -36,25 +36,33 @@ bot.command("start", async (ctx) => {
   }
 
   // ${username}
-  const text = `Assalomu alaykum ${username}!
-    🤗 Sizni "QUVONCH NASIYA"ga ishga taklif qilamiz!
-   
-   📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!
-   
-    🔘Qulayliklar
-   
-   ▫️Qadriyatli va tajribali jamoa;
-   ▫️Shaxsiy rivojlanish uchun imkoniyat;
-   ▫️Yaxshi oylik daromad;
-   ▫️Turli rag'batlantirish va bonuslar;
-   ▫️O'qish va tajriba olish imkoniyati;
-   ⚡️ SIZ UCHUN 12 OYLIK DOIMIY ISH❗️
-   
-   🙂 Talab etiladi:
-   
-   ▫️ Ishga mas'uliyatli bo'lish;
-   ▫️ Xushmuomalalik;
-   ▫️Natijaviylik va intizom.`;
+  //   const text = `Assalomu alaykum ${username}!
+  //     🤗 Sizni "QUVONCH NASIYA"ga ishga taklif qilamiz!
+  //
+  //    📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!
+  //
+  //     🔘Qulayliklar
+  //
+  //    ▫️Qadriyatli va tajribali jamoa;
+  //    ▫️Shaxsiy rivojlanish uchun imkoniyat;
+  //    ▫️Yaxshi oylik daromad;
+  //    ▫️Turli rag'batlantirish va bonuslar;
+  //    ▫️O'qish va tajriba olish imkoniyati;
+  //    ⚡️ SIZ UCHUN 12 OYLIK DOIMIY ISH❗️
+  //
+  //    🙂 Talab etiladi:
+  //
+  //    ▫️ Ishga mas'uliyatli bo'lish;
+  //    ▫️ Xushmuomalalik;
+  //    ▫️Natijaviylik va intizom.`;
+
+  const text = `“UCHAR” xodimlarni ishga olish boti:
+
+“UCHAR jamoasiga qo’shilishga tayyormisiz? Biz innovatsiyalar va muvaffaqiyatga intilamiz. Anketani to’ldiring va UCHAR’ning global va nufuzli jamoasida o’z o’rningizni toping!”
+
+Бот для набора сотрудников “UCHAR”:
+
+“Готовы присоединиться к команде UCHAR? Мы стремимся к инновациям и успеху. Заполните анкету и найдите своё место в престижной глобальной команде UCHAR!”`;
 
   if (user.role === "admin") {
     ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/8", {

@@ -1,33 +1,47 @@
 [
   [
-    "Ism, familiya, sharifingizni kiriting!(Misol uchun: Begzod Farhodov Ikromovich (o'g'li))",
-    "Tavallud topgan sanangizni kiriting!(Misol uchun: 01.01.1998 / kun.oy.yil)",
-    "Millatingizni kiriting!\n(Misol uchun: O'zbek)",
-    "Hayotingizdagi ustuvor qadriyat qanday?",
-    "Oilaviy ahvolingiz qanday? (turmush qurgan, qurmagan)",
-    "Ishga kirishingizga kim qaror qabul qiladi?",
-    "Qiziqishlaringiz qanday? (Xobbiy)",
-    "Manzilingizni kiriting!\n(Misol uchun: Toshkent shahar, Shayxontohur tumani, Qoratosh mahallasi, 11-uy)",
-    "Telefon raqamingizni kiriting!\n(Misol uchun: +998911234567)",
-    "Bizning korxona haqida qayerdan ma'lumot oldingiz?: ",
-    "Qaysi korxona yoki tashkilotlarda ishlagansiz? Yo'nalishingizning nomini kiriting!",
-    "Nima sababdan ishdan ketgansiz?",
-    "Sizga qaysi ish vaqti qulay?",
-    "Oxirgi ish joyingizda oylik maoshingiz qancha edi?",
-    "Bizning korxonada qancha muddat ishlamoqchisiz?",
-    "Tanqidlarga qanday qaraysiz?",
-    "Ishga borib kelishda qiyinchilik bo'lmaydimi? (O'zim bora olaman, Transport zarur, Qolib ishlamoqchiman)",
-    "Ma'lumotingiz qanaqa? Yoki o'qish joyi!",
-    "Berilgan topshiriq va vazifalarga qay darajada yondashasiz?",
-    "Kompyuterda qaysi dasturlarni bilasiz va necha foiz?",
-    "Qaysi Chet tillarda so'zlasha olasiz?",
-    "O'zingiz haqingizda nimalar qo'shmoqchisiz?",
-    "Qaysi lavozimda ishlashni xohlaysiz?",
-    "Belgilangan lavozimdagi ish tajribangiz:",
-    "Korporativ forma olish uchun kiyimingizning o'lchamini yuboring faqat sotuvchi lavozimi uchun (futbolka, ko'ylak):",
-    "Namoz o’qiysizmi?",
-    "Ishga qabul qilsak kompaniya uchun qanday foyda keltirasiz?",
-    "Bizda qancha maosh olmoqchisiz (yozishingiz shart)?"
+    [
+      "Ism, familiya, sharifingizni kiriting!(Misol uchun: Begzod Farhodov Ikromovich (o'g'li))",
+      "salom",
+      "hello"
+    ],
+    [
+      "Tavallud topgan sanangizni kiriting!(Misol uchun: 01.01.1998 / kun.oy.yil)"
+    ],
+    ["Millatingizni kiriting!\n(Misol uchun: O'zbek)"],
+    ["Hayotingizdagi ustuvor qadriyat qanday?"],
+    ["Oilaviy ahvolingiz qanday? (turmush qurgan, qurmagan)"],
+    ["Ishga kirishingizga kim qaror qabul qiladi?"],
+    ["Qiziqishlaringiz qanday? (Xobbiy)"],
+    [
+      "Manzilingizni kiriting!\n(Misol uchun: Toshkent shahar, Shayxontohur tumani, Qoratosh mahallasi, 11-uy)"
+    ],
+    ["Telefon raqamingizni kiriting!\n(Misol uchun: +998911234567)"],
+    ["Bizning korxona haqida qayerdan ma'lumot oldingiz?: "],
+    [
+      "Qaysi korxona yoki tashkilotlarda ishlagansiz? Yo'nalishingizning nomini kiriting!"
+    ],
+    ["Nima sababdan ishdan ketgansiz?"],
+    ["Sizga qaysi ish vaqti qulay?"],
+    ["Oxirgi ish joyingizda oylik maoshingiz qancha edi?"],
+    ["Bizning korxonada qancha muddat ishlamoqchisiz?"],
+    ["Tanqidlarga qanday qaraysiz?"],
+    [
+      "Ishga borib kelishda qiyinchilik bo'lmaydimi? (O'zim bora olaman, Transport zarur, Qolib ishlamoqchiman)"
+    ],
+    ["Ma'lumotingiz qanaqa? Yoki o'qish joyi!"],
+    ["Berilgan topshiriq va vazifalarga qay darajada yondashasiz?"],
+    ["Kompyuterda qaysi dasturlarni bilasiz va necha foiz?"],
+    ["Qaysi Chet tillarda so'zlasha olasiz?"],
+    ["O'zingiz haqingizda nimalar qo'shmoqchisiz?"],
+    ["Qaysi lavozimda ishlashni xohlaysiz?"],
+    ["Belgilangan lavozimdagi ish tajribangiz:"],
+    [
+      "Korporativ forma olish uchun kiyimingizning o'lchamini yuboring faqat sotuvchi lavozimi uchun (futbolka, ko'ylak):"
+    ],
+    ["Namoz o’qiysizmi?"],
+    ["Ishga qabul qilsak kompaniya uchun qanday foyda keltirasiz?"],
+    ["Bizda qancha maosh olmoqchisiz (yozishingiz shart)?"]
   ],
   [
     [

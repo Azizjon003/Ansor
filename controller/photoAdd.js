@@ -67,7 +67,7 @@ answerPhoto.on("photo", async (ctx) => {
   let arrcha = [];
   // obj.img = image.href;
   for (let i = 0; i < dataQ.length; i++) {
-    arrcha.push(`\n${i + 1}.${dataQ[i]}: ${arr[i]}`);
+    arrcha.push(`\n${i + 1}.${dataQ[i][0]}: ${arr[i]}`);
   }
   // userArr.push(obj);
   const phone = arr[8];

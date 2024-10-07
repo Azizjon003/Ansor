@@ -44,7 +44,7 @@ confirm.hears("Ha", async (ctx) => {
   const user = await User.findOne({ telegramId: id });
   const data = datas[user.job];
   let recent = 0;
-  
+
   await user.updateOne(
     {
       telegramId: id,
@@ -53,10 +53,19 @@ confirm.hears("Ha", async (ctx) => {
       recent: recent,
     }
   );
+  let keyboard = ["Orqaga", ...data[recent].slice(1)].map((el) => [
+    { text: el },
+  ]);
 
-  ctx.telegram.sendMessage(id, data[recent], {
+  console.log(data[recent]);
+
+  ctx.telegram.sendMessage(id, data[recent][0], {
     parse_mode: "HTML",
-    reply_markup: cancel,
+    reply_markup: {
+      keyboard: keyboard,
+      resize_keyboard: true,
+      one_time_keyboard: true,
+    },
   });
   return ctx.wizard.next();
 });
