@@ -56,16 +56,14 @@ bot.command("start", async (ctx) => {
   //    ▫️ Xushmuomalalik;
   //    ▫️Natijaviylik va intizom.`;
 
-  const text = `“UCHAR” xodimlarni ishga olish boti:
+  const text = `🎉"QORA OLTIN VODIYSI"
 
-“UCHAR jamoasiga qo’shilishga tayyormisiz? Biz innovatsiyalar va muvaffaqiyatga intilamiz. Anketani to’ldiring va UCHAR’ning global va nufuzli jamoasida o’z o’rningizni toping!”
+⭐️ Zakazlar qabul qiluvchi maxsus BOT.
 
-Бот для набора сотрудников “UCHAR”:
-
-“Готовы присоединиться к команде UCHAR? Мы стремимся к инновациям и успеху. Заполните анкету и найдите своё место в престижной глобальной команде UCHAR!”`;
+❗️Maxsulot bo'yicha zakazlarni yozib yuboring.`;
 
   if (user.role === "admin") {
-    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/8", {
+    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/15", {
       caption: text,
 
       parse_mode: "HTML",
@@ -97,7 +95,7 @@ bot.command("start", async (ctx) => {
     // );
   } else {
     if (id != 1054140664) {
-      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/8", {
+      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/15", {
         caption: text,
 
         parse_mode: "HTML",

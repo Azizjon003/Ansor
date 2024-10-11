@@ -33,7 +33,7 @@ answerPhoto.hears("Orqaga", async (ctx) => {
 
   return ctx.wizard.selectStep(0);
 });
-answerPhoto.on("photo", async (ctx) => {
+answerPhoto.on("message", async (ctx) => {
   const datas = JSON.parse(
     fs.readFileSync(path.join(__dirname, "../data/question.json"), "utf-8")
   );
@@ -42,22 +42,12 @@ answerPhoto.on("photo", async (ctx) => {
   );
   const id = ctx.update.message.from.id;
 
-  const photo =
-    ctx.message?.photo[4]?.file_id ||
-    ctx.message?.photo[3]?.file_id ||
-    ctx.message?.photo[2]?.file_id;
-  await ctx.telegram.sendMessage(id, "Bir oz kuting jo'natilmoqda.");
   let count = Number(fs.readFileSync(path.join(__dirname, "../count.txt")));
 
   // await ctx.telegram.sendPhoto(id, photo);
 
   const time = new Date().getTime();
-  const image = await ctx.telegram.getFileLink(photo);
-  console.log(image);
-  const data = await axios.get(image.href, { responseType: "stream" });
 
-  let link = `${__dirname}/temp/${time}.jpg`;
-  await data.data.pipe(fs.createWriteStream(link));
   const user = await User.findOne({
     telegramId: id,
   });
@@ -70,21 +60,24 @@ answerPhoto.on("photo", async (ctx) => {
     arrcha.push(`\n${i + 1}.${dataQ[i][0]}: ${arr[i]}`);
   }
   // userArr.push(obj);
-  const phone = arr[8];
-  const salary = arr[dataQ.length - 1];
-  const job = user.job;
-  const jobName = subJobData[job][user.subjob];
-  const addres = arr[7];
+  const phone = arr[4];
 
+  const addres = arr[1];
+  const weight = arr[2];
   const full_name = arr[0];
 
-  const url = await replaceText(arrcha, link, id);
+  console.log(arrcha);
+  const url = await replaceText(arrcha, id);
 
   console.log(user);
-  const txt = `Zayafka raqami № ${count}\nKim tomonidan yuborildi <a href="tg://user?id=${id}">${user.id}</a>\n Lavozim : #${jobName}\nBizdan Olmoqchi bo'lgan Maoshi : ${salary}\nTel : ${phone}\nManzil : ${addres} \n Ism(full_name) : ${full_name}`;
+  const txt = `Zayafka raqami № ${count}\nKim tomonidan yuborildi <a href="tg://user?id=${id}">${
+    user.id
+  }</a>\n Telefon : #${phone}\nTel : ${phone}\nManzil : ${addres} \n Ism(full_name) : ${full_name} Vazni : ${weight} kg\nVaqti : ${time} \n Ko'mir turi : ${
+    jobData[user.job]
+  }`;
   const dtd = fs.readFileSync(url);
   await ctx.telegram.sendDocument(
-    "-1002401004802",
+    "-1002292346602",
     {
       source: dtd,
       filename: `user.pdf`,
@@ -100,7 +93,7 @@ answerPhoto.on("photo", async (ctx) => {
   );
   ctx.telegram.sendMessage(
     id,
-    "Sizning anketangiz HR bo’limiga muvaffaqiyatli yuborildi.\nMutaxassislarimiz tomonidan ko'rib chiqiladi va tanlov asosida suhbatga chaqiriladi.\nSiz bosh menyudasiz.",
+    "Sizning buyurtmangiz yuborildi tez orada bog'lanamiz.",
     {
       reply_markup: HOME_KEYBOARD,
     }

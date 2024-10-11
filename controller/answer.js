@@ -38,7 +38,6 @@ answer.on("message", async (ctx) => {
   const id = ctx.update.message.from.id;
   const text = ctx.update.message.text;
   const user = await User.findOne({ telegramId: id });
-  console.log(user.questions);
   const data = datas[user.job];
   let recent = user.recent * 1;
   console.log(recent, "ishlashini tekshir");
@@ -60,7 +59,7 @@ answer.on("message", async (ctx) => {
   if (recent == data.length) {
     ctx.telegram.sendMessage(
       id,
-      "Rasmingizni yuboring (Selfi ko’rinishida yoki 3x4):",
+      "Enter so'zini yuboring va adminlarimiz siz bilan bog'lanadi",
       {
         parse_mode: "HTML",
       }

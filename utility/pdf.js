@@ -6,16 +6,9 @@ const Printer = new pdfMake({
 });
 const fs = require("fs");
 const path = require("path");
-const ishla = async (arr, imgLink, id) => {
+const ishla = async (arr, id) => {
   let doc = {
-    content: [
-      {
-        image: imgLink,
-        width: 200,
-        height: 200,
-      },
-      ...arr,
-    ],
+    content: [...arr],
     defaultStyle: {
       fontSize: 8,
     },

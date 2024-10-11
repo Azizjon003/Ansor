@@ -51,7 +51,7 @@ working.hears(datas, async (ctx) => {
   // await user.update({ job: i }, { where: { telegramId: id } });
 
   await User.updateOne({ telegramId: id }, { job: i });
-  let txt = "Qaysi lavozimda ishlamoqchisiz";
+  let txt = "Ko'mirlar turini tanlang";
   let data = JSON.parse(fs.readFileSync(pathUrkCategory, "utf-8"));
   console.log(data);
   let inlineKeyboard = addInlineKeyboard(data[0]);

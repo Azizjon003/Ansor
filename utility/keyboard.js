@@ -3,7 +3,7 @@ const path = require("path");
 
 const HOME_KEYBOARD = {
   keyboard: [
-    [{ text: "🧾 Anketa to'ldirish" }],
+    [{ text: "Buyurtma berish" }],
     [
       {
         text: "Bog'lanish 📞",
