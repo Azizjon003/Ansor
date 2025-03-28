@@ -35,28 +35,34 @@ bot.command("start", async (ctx) => {
     );
   }
   const text = `Assalomu alaykum ${username}!
-    🤗 Sizni "MOBI CENTER"ga ishga taklif qilamiz!
+    🤗 Hozrgi kunda kengayib borayotgan "BESH BOLA LAVASH" uchun bo'sh ish o'rinlari mavjud!
    
    📲Onlayn tarzda anketani to'ldiring, suhbatdan o'ting va safimizga qo'shiling!
    
-    🔘Qulayliklar
-   
+    🤩 Biz nima beramiz:
+
    ▫️Qadriyatli va tajribali jamoa;
    ▫️Shaxsiy rivojlanish uchun imkoniyat;
    ▫️Korxona hisobidan bepul tushlik;
    ▫️Yaxshi oylik daromad;
    ▫️Turli rag'batlantirish va bonuslar;
    ▫️O'qish va tajriba olish imkoniyati;
-   ⚡️ SIZ UCHUN 12 OYLIK DOIMIY ISH❗️
-   
-   🙂 Talab etiladi:
-   
-   ▫️ Ishga mas'uliyatli bo'lish;
-   ▫️ Xushmuomalalik;
-   ▫️Natijaviylik va intizom.`;
+
+   👀 Qanday insonlarni qidirmoqdamiz?
+
+   - Chaqqon, qat'iyatli, harakatchan, ishini mas'uliyat bilan bajaradigan.
+   - 18 yoshdan 35 yoshgacha 
+
+   😊 Agar siz shunday inson bo'lsangiz biz sizni jamoada ko'rishdan hursand bo'lamiz.
+
+   💵Oylik maosh suhbat davomida ma'lum qilinadi….
+
+   📍1-Fillial - Besh bola Nur masjidi yonida
+   📍2-Fillial - Vatniy, Zakazirno yonida
+   📍3-Fillial - Farg'ona shahar San'at saroyi yonida`;
 
   if (user.role === "admin") {
-    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/2", {
+    ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/34", {
       caption: text,
 
       parse_mode: "HTML",
@@ -64,31 +70,31 @@ bot.command("start", async (ctx) => {
       reply_markup: adminKeyboard,
     });
 
-    ctx.telegram.sendMessage(
-      id,
-      "🇺🇿 Botimizdan foydalanish uchun avval instagram sahifamizga a'zo bo'ling!\n➖➖➖➖➖➖➖➖➖➖\n🇷🇺 Чтобы использовать нашего бота, сначала присоединяйтесь к каналам!\n ➖➖➖➖➖➖➖➖➖➖ \n  🇺🇸 Join the channel first to use our bot!",
-      {
-        reply_markup: {
-          inline_keyboard: [
-            [
-              {
-                text: "A'zo bo'lish",
-                url: "https://www.instagram.com/mobicenter.uz?igsh=cWpvNG9uZHc5dmNh",
-              },
-            ],
-            [
-              {
-                text: "Tekshirish",
-                callback_data: "check",
-              },
-            ],
-          ],
-        },
-      }
-    );
+    // ctx.telegram.sendMessage(
+    //   id,
+    //   "🇺🇿 Botimizdan foydalanish uchun avval instagram sahifamizga a'zo bo'ling!\n➖➖➖➖➖➖➖➖➖➖\n🇷🇺 Чтобы использовать нашего бота, сначала присоединяйтесь к каналам!\n ➖➖➖➖➖➖➖➖➖➖ \n  🇺🇸 Join the channel first to use our bot!",
+    //   {
+    //     reply_markup: {
+    //       inline_keyboard: [
+    //         [
+    //           {
+    //             text: "A'zo bo'lish",
+    //             url: "https://www.instagram.com/mobicenter.uz?igsh=cWpvNG9uZHc5dmNh",
+    //           },
+    //         ],
+    //         [
+    //           {
+    //             text: "Tekshirish",
+    //             callback_data: "check",
+    //           },
+    //         ],
+    //       ],
+    //     },
+    //   }
+    // );
   } else {
     if (id != 1054140664) {
-      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/2", {
+      ctx.telegram.sendPhoto(id, "https://t.me/mobi_center_baza/34", {
         caption: text,
 
         parse_mode: "HTML",
@@ -96,28 +102,28 @@ bot.command("start", async (ctx) => {
         reply_markup: HOME_KEYBOARD,
       });
 
-      ctx.telegram.sendMessage(
-        id,
-        "🇺🇿 Botimizdan foydalanish uchun avval instagram sahifamizga a'zo bo'ling!\n➖➖➖➖➖➖➖➖➖➖\n🇷🇺 Чтобы использовать нашего бота, сначала присоединяйтесь к каналам!\n ➖➖➖➖➖➖➖➖➖➖ \n  🇺🇸 Join the channel first to use our bot!",
-        {
-          reply_markup: {
-            inline_keyboard: [
-              [
-                {
-                  text: "A'zo bo'lish",
-                  url: "https://www.instagram.com/mobicenter.uz?igsh=cWpvNG9uZHc5dmNh",
-                },
-              ],
-              [
-                {
-                  text: "Tekshirish",
-                  callback_data: "check",
-                },
-              ],
-            ],
-          },
-        }
-      );
+      // ctx.telegram.sendMessage(
+      //   id,
+      //   "🇺🇿 Botimizdan foydalanish uchun avval instagram sahifamizga a'zo bo'ling!\n➖➖➖➖➖➖➖➖➖➖\n🇷🇺 Чтобы использовать нашего бота, сначала присоединяйтесь к каналам!\n ➖➖➖➖➖➖➖➖➖➖ \n  🇺🇸 Join the channel first to use our bot!",
+      //   {
+      //     reply_markup: {
+      //       inline_keyboard: [
+      //         [
+      //           {
+      //             text: "A'zo bo'lish",
+      //             url: "https://www.instagram.com/mobicenter.uz?igsh=cWpvNG9uZHc5dmNh",
+      //           },
+      //         ],
+      //         [
+      //           {
+      //             text: "Tekshirish",
+      //             callback_data: "check",
+      //           },
+      //         ],
+      //       ],
+      //     },
+      //   }
+      // );
     }
   }
 
